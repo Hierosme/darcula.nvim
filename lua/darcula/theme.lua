@@ -106,9 +106,9 @@ theme.loadEditor = function ()
 		DiffText =				  { fg = darcula.none, bg = darcula.diffText }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =			  { fg = darcula.muted },
 		ErrorMsg =				  { fg = darcula.errorMsg },
-		Folded =				    { fg = darcula.disabled, bg = darcula.none, style = 'italic' },
-		FoldColumn =			  { fg = darcula.blue },
-		IncSearch =				  { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
+		Folded =				    { fg = darcula.foldedFg, bg = darcula.foldedBg, style = 'italic' },
+		FoldColumn =			  { fg = darcula.foldedFg, bg = darcula.foldedBg },
+		IncSearch =				  { fg = darcula.none, bg = darcula.incSearch },
 		LineNr =				    { fg = darcula.line_numbers },
 		CursorLineNr =		  { fg = darcula.accent },
 		MatchParen =			  { fg = darcula.yellow, bg = darcula.none, style = 'bold' },
