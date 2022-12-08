@@ -334,9 +334,9 @@ theme.loadLSP = function ()
         LspDiagnosticsFloatingHint =            { fg = darcula.purple  }, -- used for "Hint" diagnostic messages in the diagnostics float
         LspDiagnosticsVirtualTextHint =         { fg = darcula.purple  }, -- Virtual text "Hint"
         LspDiagnosticsUnderlineHint =           { style = 'undercurl', sp = darcula.paleblue }, -- used to underline "Hint" diagnostics.
-        LspReferenceText =                      { fg = darcula.accent, bg = darcula.highlight }, -- used for highlighting "text" references
-        LspReferenceRead =                      { fg = darcula.accent, bg = darcula.highlight }, -- used for highlighting "read" references
-        LspReferenceWrite =                     { fg = darcula.accent, bg = darcula.highlight }, -- used for highlighting "write" references
+        LspReferenceText =                      { fg = darcula.none, bg = darcula.identifierUnderCaret }, -- used for highlighting "text" references
+        LspReferenceRead =                      { fg = darcula.none, bg = darcula.identifierUnderCaret }, -- used for highlighting "read" references
+        LspReferenceWrite =                     { fg = darcula.none, bg = darcula.identifierUnderCaretWrite }, -- used for highlighting "write" references
     }
 
     return lsp
