@@ -9,45 +9,45 @@ theme.loadSyntax = function ()
 		Type =						{ fg = darcula.purple }, -- int, long, char, etc.
 		StorageClass =				{ fg = darcula.cyan }, -- static, register, volatile, etc.
 		Structure =					{ fg = darcula.puple }, -- struct, union, enum, etc.
-		Constant =					{ fg = darcula.yellow }, -- any constant
-		String =					{ fg = darcula.green, bg = darcula.none, style= 'italic' }, -- Any string
-		Character =					{ fg = darcula.orange }, -- any character constant: 'c = { fg='\n'
+		Constant =					{ fg = darcula.constant }, -- any constant
+		String =					{ fg = darcula.string, bg = darcula.none, style= 'italic' }, -- Any string
+		Character =					{ fg = darcula.string }, -- any character constant: 'c = { fg='\n'
 		Number =					{ fg = darcula.number }, -- a number constant: 5
 		Boolean =					{ fg = darcula.orange }, -- a boolean constant: TRUE, false
 		Float =						{ fg = darcula.orange }, -- a floating point constant: 2.3e10
-		Statement =					{ fg = darcula.pink }, -- any statement
+		Statement =					{ fg = darcula.keyword }, -- any statement
 		Label =						{ fg = darcula.purple }, -- case, default, etc.
 		Operator =					{ fg = darcula.cyan }, -- sizeof", "+", "*", etc.
 		Exception =					{ fg = darcula.cyan }, -- try, catch, throw
-		PreProc =					{ fg = darcula.purple }, -- generic Preprocessor
+		PreProc =					{ fg = darcula.metaData }, -- generic Preprocessor
 		Include =					{ fg = darcula.blue }, -- preprocessor #include
 		-- Define =					{ fg = darcula.pink }, -- preprocessor #define
 		Macro =						{ fg = darcula.cyan }, -- same as Define
 		Typedef =					{ fg = darcula.red }, -- A typedef
 		PreCondit =					{ fg = darcula.cyan }, -- preprocessor #if, #else, #endif, etc.
-		Special =					{ fg = darcula.red }, -- any special symbol
-		SpecialChar =				{ fg = darcula.pink }, -- special character in a constant
-		Tag =						{ fg = darcula.red }, -- you can use CTRL-] on this
-		Delimiter =					{ fg = darcula.cyan }, -- character that needs attention like , or .
-		SpecialComment =			{ fg = darcula.gray }, -- special things inside a comment
-		Debug =						{ fg = darcula.red }, -- debugging statements
-		Underlined =				{ fg = darcula.link, bg = darcula.none, style = 'underline' }, -- text that stands out, HTML links
+		Special =					{ fg = darcula.metaData }, -- any special symbol
+		SpecialChar =				{ fg = darcula.metaData }, -- special character in a constant
+		Tag =						    { fg = darcula.keyword }, -- you can use CTRL-] on this
+		Delimiter =					{ fg = darcula.delimiter }, -- character that needs attention like , or .
+		SpecialComment =		{ fg = darcula.specialComment, bg = darcula.none, style = 'italic' }, -- special things inside a comment
+		Debug =						{ fg = darcula.debug, bg = darcula.none, style = 'italic' }, -- debugging statements
+		Underlined =			{ fg = darcula.fg, bg = darcula.none, style = 'underline' }, -- text that stands out, HTML links
 		Ignore =					{ fg = darcula.disabled }, -- left blank, hidden
 		Error =						{ fg = darcula.error, bg = darcula.none, style = 'bold,underline' }, -- any erroneous construct
 		Todo =						{ fg = darcula.yellow, bg = darcula.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-        htmlLink = { fg = darcula.link, style = "underline" },
-        htmlH1 = { fg = darcula.cyan, style = "bold" },
-        htmlH2 = { fg = darcula.red, style = "bold" },
-        htmlH3 = { fg = darcula.green, style = "bold" },
-        htmlH4 = { fg = darcula.yellow, style = "bold" },
-        htmlH5 = { fg = darcula.purple, style = "bold" },
-        markdownH1 = { fg = darcula.cyan, style = "bold" },
-        markdownH2 = { fg = darcula.red, style = "bold" },
-        markdownH3 = { fg = darcula.green, style = "bold" },
-        markdownH1Delimiter = { fg = darcula.cyan },
-        markdownH2Delimiter = { fg = darcula.red },
-        markdownH3Delimiter = { fg = darcula.green },
+    htmlLink = { fg = darcula.link, style = "underline" },
+    htmlH1 = { fg = darcula.cyan, style = "bold" },
+    htmlH2 = { fg = darcula.red, style = "bold" },
+    htmlH3 = { fg = darcula.green, style = "bold" },
+    htmlH4 = { fg = darcula.yellow, style = "bold" },
+    htmlH5 = { fg = darcula.purple, style = "bold" },
+    markdownH1 = { fg = darcula.cyan, style = "bold" },
+    markdownH2 = { fg = darcula.red, style = "bold" },
+    markdownH3 = { fg = darcula.green, style = "bold" },
+    markdownH1Delimiter = { fg = darcula.cyan },
+    markdownH2Delimiter = { fg = darcula.red },
+    markdownH3Delimiter = { fg = darcula.green },
 	}
 
 	-- Options:
@@ -62,19 +62,19 @@ theme.loadSyntax = function ()
 	-- Italic Keywords
 	if vim.g.darcula_italic_keywords == true then
 		syntax.Conditional =	{fg = darcula.purple, bg = darcula.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = darcula.purple, bg = darcula.none, style = 'italic'} -- italic for, do, while, etc.
+		syntax.Keyword =			{fg = darcula.keyword, bg = darcula.none, style = 'italic'} -- italic for, do, while, etc.
 		syntax.Repeat =				{fg = darcula.purple, bg = darcula.none, style = 'italic'} -- italic any other keyword
 	else
 		syntax.Conditional =	{fg = darcula.purple} -- normal if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = darcula.purple} -- normal for, do, while, etc.
+		syntax.Keyword =			{fg = darcula.keyword} -- normal for, do, while, etc.
 		syntax.Repeat =				{fg = darcula.purple} -- normal any other keyword
 	end
 
 	-- Italic Function names
 	if vim.g.darcula_italic_functions == true then
-		syntax.Function =		{fg = darcula.blue, bg = darcula.none, style = 'italic'} -- italic funtion names
+		syntax.Function =		{fg = darcula.constructor, style = 'italic'} -- italic funtion names
 	else
-		syntax.Function =		{fg = darcula.blue} -- normal function names
+		syntax.Function =		{fg = darcula.constructer} -- normal function names
 	end
 
 	if vim.g.darcula_italic_variables == true then
