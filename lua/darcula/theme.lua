@@ -164,20 +164,24 @@ theme.loadEditor = function ()
     -- Options:
 
     --Set transparent background
-    if vim.g.darcula_disable_background == true then
-		editor.Normal =				{ fg = darcula.fg, bg = darcula.none } -- normal text and background color
-		editor.SignColumn =			{ fg = darcula.fg, bg = darcula.none }
-    else
+    --   if vim.g.darcula_disable_background == true then
+      -- editor.Normal =				{ fg = darcula.fg, bg = darcula.none } -- normal text and background color
+      -- editor.SignColumn =			{ fg = darcula.fg, bg = darcula.none }
+    --   else
+      -- editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
+      -- editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
+      --   end
+    --
 		editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
 		editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
-    end
 
     -- Remove window split borders
-    if vim.g.darcula_borders == true then
-		editor.VertSplit =				{ fg = darcula.border }
-    else
-		editor.VertSplit =				{ fg = darcula.bg }
-    end
+    --   if vim.g.darcula_borders == true then
+      -- editor.VertSplit =				{ fg = darcula.border }
+    --   else
+      -- editor.VertSplit =				{ fg = darcula.bg }
+    --   end
+    editor.VertSplit =				{ fg = darcula.border }
 
     return editor
 end
