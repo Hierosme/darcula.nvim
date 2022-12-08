@@ -131,8 +131,8 @@ if vim.g.darcula_contrast == false then
     darcula.sidebar = darcula.bg
     darcula.float = darcula.bg
 else
-    darcula.sidebar = darcula.bg_alt
-    darcula.float = darcula.bg_alt
+    darcula.sidebar = darcula.bg
+    darcula.float = darcula.bg
 end
 
 return darcula
