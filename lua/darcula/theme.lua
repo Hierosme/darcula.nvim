@@ -211,11 +211,12 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation =              { fg = darcula.red },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-        TSAttribute =               { fg = darcula.yellow },    -- (unstable) TODO: docs
-        TSBoolean=                  { fg = darcula.orange },    -- For booleans.
-        TSCharacter=                { fg = darcula.orange },    -- For characters.
-        TSConstructor =             { fg = darcula.purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        TSAnnotation =              { fg = darcula.metaData },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+        TSAttribute =               { fg = darcula.metaData },    -- (unstable) TODO: docs
+        TSBoolean =                 { fg = darcula.keyword },    -- For booleans.
+        TSCharacter =               { fg = darcula.string },    -- For characters.
+        TSComment =                 { fg = darcula.comment },    -- For characters.
+        TSConstructor =             { fg = darcula.constructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSConstant =                { fg = darcula.yellow },    -- For constants
         TSConstBuiltin =            { fg = darcula.blue },    -- For constant that are built in the language: `nil` in Lua.
         TSConstMacro =              { fg = darcula.blue },    -- For constants that are defined by macros: `NULL` in C.
