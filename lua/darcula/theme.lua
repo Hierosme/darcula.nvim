@@ -92,18 +92,19 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-    NormalFg =          { fg = darcula.fg},
-		NormalFloat =			  { fg = darcula.fg, bg = darcula.float }, -- normal text and background color
 		ColorColumn =			  { fg = darcula.none, bg = darcula.wrapGuide }, --  used for the columns set with 'colorcolumn'
 		Conceal =				    { fg = darcula.muted, bg = darcula.bg }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =				    { fg = darcula.cursor }, -- the character under the cursor
 		lCursor =				    { fg = darcula.cursor }, -- the character under the cursor
+		CursorColumn =		  { fg = darcula.none, bg = darcula.cursorLine },
 		CursorIM =				  { fg = darcula.cursor }, -- like Cursor, but used when in IME mode
-		Directory =				  { fg = darcula.fg }, -- directory names (and other special names in listings)
+		CursorLine =		    { fg = darcula.none, bg = darcula.cursorLine , style = "NONE"},
+		-- CursorLineNr =		  { fg = darcula.none, bg = darcula.cursorLine },
 		DiffAdd =				    { fg = darcula.none,  bg = darcula.diffAdd }, -- diff mode: Added line
 		DiffChange =			  { fg = darcula.none, bg = darcula.diffChange }, --  diff mode: Changed line
 		DiffDelete =			  { fg = darcula.none, bg = darcula.diffDelete }, -- diff mode: Deleted line
 		DiffText =				  { fg = darcula.none, bg = darcula.diffText }, -- diff mode: Changed text within a changed line
+		Directory =				  { fg = darcula.fg }, -- directory names (and other special names in listings)
 		EndOfBuffer =			  { fg = darcula.muted },
 		ErrorMsg =				  { fg = darcula.errorMsg },
 		Folded =				    { fg = darcula.foldedFg, bg = darcula.foldedBg, style = 'italic' },
@@ -112,11 +113,14 @@ theme.loadEditor = function ()
 		LineNr =				    { fg = darcula.lineNumber, bg = darcula.gutter },
 		LineNrAbove =				{ fg = darcula.lineNumber, bg = darcula.gutter },
 		LineNrBelow =				{ fg = darcula.lineNumber, bg = darcula.gutter },
-		CursorLineNr =		  { fg = darcula.cursorLineNr, bg = darcula.cursorLine },
 		MatchParen =			  { fg = darcula.matchBraceFg, bg = darcula.matchBraceBg, style = 'bold' },
 		ModeMsg =				    { fg = darcula.stdOutput },
 		MoreMsg =				    { fg = darcula.fg },
 		NonText =				    { fg = darcula.muted },
+    Normal =            { fg=darcula.fg, darcula.bg},
+    NormalFg =          { fg = darcula.fg},
+		NormalFloat =			  { fg = darcula.fg, bg = darcula.float }, -- normal text and background color
+		NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
 		Pmenu =					    { fg = darcula.menuFg, bg = darcula.menu },
 		PmenuSel =				  { fg = darcula.menuFg, bg = darcula.menuSel },
 		PmenuSbar =				  { fg = darcula.menu, bg = darcula.menu },
@@ -131,6 +135,7 @@ theme.loadEditor = function ()
 		SpellLocal =			  { fg = darcula.cyan, bg = darcula.none, style = 'italic,undercurl' },
 		SpellRare =				  { fg = darcula.purple, bg = darcula.none, style = 'italic,undercurl' },
 		StatusLine =			  { fg = darcula.fg, bg = darcula.contrast },
+		SignColumn =			  { fg = darcula.none, bg = darcula.gutter },
 		StatusLineNC =  		{ fg = darcula.text, bg = darcula.disabled },
 		StatusLineTerm =		{ fg = darcula.fg, bg = darcula.contrast },
 		StatusLineTermNC =	{ fg = darcula.text, bg = darcula.disabled },
@@ -140,13 +145,11 @@ theme.loadEditor = function ()
 		Title =					    { fg = darcula.green, bg = darcula.none, style = 'bold' },
 		Visual =				    { fg = darcula.fg, bg = darcula.selection },
 		VisualNOS =				  { fg = darcula.none, bg = darcula.selection },
+		VertSplit =				  { fg = darcula.muted },
 		WarningMsg =			  { fg = darcula.yellow },
 		WildMenu =				  { fg = darcula.menuFg, bg = darcula.menuSel, style = 'bold' },
-		CursorColumn =		  { fg = darcula.none, bg = darcula.cursorLine, style = "NONE" },
-		CursorLine =			  { fg = darcula.none, bg = darcula.none },
 		ToolbarLine =			  { fg = darcula.fg, bg = darcula.bg_alt },
 		ToolbarButton =			{ fg = darcula.fg, bg = darcula.none, style = 'bold' },
-		NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
 		InsertMode =			  { fg = darcula.green, bg = darcula.none, style = 'reverse' },
 		ReplacelMode =			{ fg = darcula.red, bg = darcula.none, style = 'reverse' },
 		VisualMode =			  { fg = darcula.purple, bg = darcula.none, style = 'reverse' },
@@ -434,11 +437,7 @@ theme.loadPlugins = function()
         -- There are also links to normal bindings to style the tree itself.
 
         NvimTreeCursorLine = { fg=darcula.fg, bg=darcula.selection, style='bold'},
-        Normal = { fg=darcula.fg, darcula.bg},
-        EndOfBuffer = { fg=darcula.bg, darcula.bg},
-        -- CursorLine = { fg=darcula.ANSIGray, darcula.UIBlue},
-        -- VertSplit = { fg=darcula.macroName, darcula.bg, 'italic')")
-        -- CursorColumn = { fg=darcula.macroName, darcula.bg, 'italic')")
+  
 
         -- There are also links for file highlight with git properties
         -- These all link to there Git equivalent
