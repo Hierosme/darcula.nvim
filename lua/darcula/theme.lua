@@ -215,7 +215,6 @@ theme.loadTreeSitter = function ()
         TSAttribute =               { fg = darcula.metaData },    -- (unstable) TODO: docs
         TSBoolean =                 { fg = darcula.keyword },    -- For booleans.
         TSCharacter =               { fg = darcula.string },    -- For characters.
-        TSComment =                 { fg = darcula.comment },    -- For characters.
         TSConstructor =             { fg = darcula.constructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSConstant =                { fg = darcula.yellow },    -- For constants
         TSConstBuiltin =            { fg = darcula.blue },    -- For constant that are built in the language: `nil` in Lua.
@@ -265,33 +264,33 @@ theme.loadTreeSitter = function ()
     end
 
     if vim.g.darcula_italic_keywords == true then
-        treesitter.TSConditional =             { fg = darcula.purple, style = 'italic' }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = darcula.purple, style = 'italic' } -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = darcula.purple, style = 'italic' }    -- For keywords related to loops.
-        treesitter.TSKeywordFunction =         { fg = darcula.purple, style = 'italic' } -- For keywords used to define a fuction.
+        treesitter.TSConditional =             { fg = darcula.keyword, style = 'italic' }    -- For keywords related to conditionnals.
+        treesitter.TSKeyword =                 { fg = darcula.keyword, style = 'italic' } -- For keywords that don't fall in previous categories.
+        treesitter.TSRepeat =                  { fg = darcula.keyword, style = 'italic' }    -- For keywords related to loops.
+        treesitter.TSKeywordFunction =         { fg = darcula.keyword, style = 'italic' } -- For keywords used to define a fuction.
     else
-        treesitter.TSConditional =             { fg = darcula.purple }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = darcula.purple } -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = darcula.purple }    -- For keywords related to loops.
-        treesitter.TSKeywordFunction =         { fg = darcula.purple } -- For keywords used to define a fuction.
+        treesitter.TSConditional =             { fg = darcula.keyword }    -- For keywords related to conditionnals.
+        treesitter.TSKeyword =                 { fg = darcula.keyword } -- For keywords that don't fall in previous categories.
+        treesitter.TSRepeat =                  { fg = darcula.keyword }    -- For keywords related to loops.
+        treesitter.TSKeywordFunction =         { fg = darcula.keyword } -- For keywords used to define a fuction.
     end
 
     if vim.g.darcula_italic_functions == true then
-        treesitter.TSFunction =                { fg = darcula.blue, style = 'italic' }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = darcula.blue, style = 'italic' }    -- For method calls and definitions.
+        treesitter.TSFunction =                { fg = darcula.constructor, style = 'italic' }    -- For fuction (calls and definitions).
+        treesitter.TSMethod =                  { fg = darcula.constructor, style = 'italic' }    -- For method calls and definitions.
         treesitter.TSFuncBuiltin =             { fg = darcula.cyan, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
     else
-        treesitter.TSFunction =                { fg = darcula.blue }    -- For fuction (calls and definitions).
-        treesitter.TSMethod =                  { fg = darcula.blue }    -- For method calls and definitions.
+        treesitter.TSFunction =                { fg = darcula.constructor }    -- For fuction (calls and definitions).
+        treesitter.TSMethod =                  { fg = darcula.constructor }    -- For method calls and definitions.
         treesitter.TSFuncBuiltin =             { fg = darcula.cyan }    -- For builtin functions: `table.insert` in Lua.
     end
 
     if vim.g.darcula_italic_variables == true then
-        treesitter.TSVariable =                { fg = darcula.gray, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = darcula.gray, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = darcula.fg, style = 'italic' } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = darcula.keyword, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
     else
-        treesitter.TSVariable =                { fg = darcula.gray } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = darcula.gray } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = darcula.fg } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = darcula.keyword } -- Variable names that are defined by the languages, like `this` or `self`.
     end
 
     return treesitter
