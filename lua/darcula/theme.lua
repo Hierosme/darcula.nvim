@@ -11,7 +11,7 @@ theme.loadSyntax = function ()
 		Structure =					{ fg = darcula.puple }, -- struct, union, enum, etc.
 		Constant =					{ fg = darcula.yellow }, -- any constant
 		String =					{ fg = darcula.green, bg = darcula.none, style= 'italic' }, -- Any string
-		Character =					{ fg = darcula.orange }, -- any character constant: 'c', '\n'
+		Character =					{ fg = darcula.orange }, -- any character constant: 'c = { fg='\n'
 		Number =					{ fg = darcula.number }, -- a number constant: 5
 		Boolean =					{ fg = darcula.orange }, -- a boolean constant: TRUE, false
 		Float =						{ fg = darcula.orange }, -- a floating point constant: 2.3e10
@@ -379,20 +379,70 @@ theme.loadPlugins = function()
         TelescopeNormal =                       { fg = darcula.fg, bg = darcula.float },
 
         -- NvimTree
-        NvimTreeRootFolder =                    { fg = darcula.blue, style = "bold" },
-        NvimTreeGitDirty =                      { fg = darcula.yellow },
-        NvimTreeGitNew =                        { fg = darcula.green },
-        NvimTreeImageFile =                     { fg = darcula.yellow },
-        NvimTreeExecFile =                      { fg = darcula.green },
-        NvimTreeSpecialFile =                   { fg = darcula.purple , style = "underline" },
-        NvimTreeFolderName=                     { fg = darcula.paleblue },
-        NvimTreeEmptyFolderName=                { fg = darcula.disabled },
-        NvimTreeFolderIcon=                     { fg = darcula.accent },
-        NvimTreeIndentMarker =                  { fg  = darcula.disabled },
-        LspDiagnosticsError =                   { fg = darcula.error },
-        LspDiagnosticsWarning =                 { fg = darcula.yellow },
-        LspDiagnosticsInformation =             { fg = darcula.paleblue },
-        LspDiagnosticsHint =                    { fg = darcula.purple },
+        NvimTreeSymlink = { fg = darcula.fg },
+        NvimTreeFolderName = { fg=darcula.fg },
+        NvimTreeRootFolder = { fg=darcula.fg, style = 'bold'},
+        NvimTreeFolderIcon = { fg=darcula.fg },
+        NvimTreeEmptyFolderName = { fg=darcula.fg },
+        NvimTreeOpenedFolderName = { fg=darcula.fg },
+        NvimTreeExecFile = { fg=darcula.fg },
+        NvimTreeOpenedFile = { fg=darcula.fg },
+        NvimTreeSpecialFile = { fg=darcula.fg },
+        NvimTreeImageFile = { fg=darcula.fg },
+        NvimTreeMarkdownFile = { fg=darcula.fg },
+        NvimTreeIndentMarker = { fg=darcula.fg },
+        --
+        LspDiagnosticsError = { fg=darcula.errorStripe },
+        LspDiagnosticsWarning = { fg=darcula.warnStripe },
+        LspDiagnosticsInformation = { fg=darcula.infoStripe },
+        LspDiagnosticsHint = { fg=darcula.hintStripe },
+
+        -- NvimTreeLicenseIcon = { fg=darcula.macroName, bg=darcula.bg, style='italic')")
+        -- NvimTreeYamlIcon = { fg=darcula.macroName, bg=darcula.bg, 'italic')")
+        -- NvimTreeTomlIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeGitignoreIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeJsonIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        --
+        -- NvimTreeLuaIcon = { fg=darcula.UIBlue, darcula.bg, 'bold')")
+        -- NvimTreePythonIcon = { fg=darcula.UIBlue, darcula.bg},
+        -- NvimTreeShellIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeJavascriptIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeCIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeReactIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeHtmlIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeRustIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeVimIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- NvimTreeTypescriptIcon = { fg=darcula.macroName, darcula.bg, 'italic')")
+        --
+        NvimTreeGitDirty = { fg=darcula.number },
+        NvimTreeGitStaged = { fg=darcula.number },
+        NvimTreeGitMerge = { fg=darcula.number },
+        NvimTreeGitRenamed = { fg=darcula.number },
+        NvimTreeGitNew = { fg=darcula.UIRed },
+        NvimTreeGitDeleted = { fg=darcula.ANSIDarkGray },
+        NvimTreeGitIgnored = { fg=darcula.ANSIDarkGray },
+        --
+        -- NvimTreeWindowPicker
+        -- There are also links to normal bindings to style the tree itself.
+
+        NvimTreeCursorLine = { fg=darcula.fg, bg=darcula.selection, style='bold'},
+        Normal = { fg=darcula.fg, darcula.bg},
+        EndOfBuffer = { fg=darcula.bg, darcula.bg},
+        -- CursorLine = { fg=darcula.ANSIGray, darcula.UIBlue},
+        -- VertSplit = { fg=darcula.macroName, darcula.bg, 'italic')")
+        -- CursorColumn = { fg=darcula.macroName, darcula.bg, 'italic')")
+
+        -- There are also links for file highlight with git properties
+        -- These all link to there Git equivalent
+
+        NvimTreeFileDirty = { fg=darcula.number },
+        NvimTreeFileStaged = { fg=darcula.number },
+        NvimTreeFileMerge = { fg=darcula.number },
+        NvimTreeFileRenamed = { fg=darcula.number },
+        NvimTreeFileNew = { fg=darcula.UIRed },
+        NvimTreeFileDeleted = { fg=darcula.ANSIDarkGray },
+        NvimTreeFileIgnored = { fg=darcula.ANSIDarkGray },
+
 
         -- WhichKey
         WhichKey =                              { fg = darcula.accent , style = 'bold'},
@@ -436,10 +486,12 @@ theme.loadPlugins = function()
         -- Indent Blankline
         IndentBlanklineChar =                   { fg = darcula.highlight },
         IndentBlanklineContextChar =            { fg = darcula.disabled },
-	
-	 -- Nvim dap
+
+	      -- Nvim dap
          DapBreakpoint =                         { fg = darcula.red },
          DapStopped =                            { fg = darcula.green },
+
+        -- nvim tree
     }
 
     -- Options:
