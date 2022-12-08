@@ -102,7 +102,6 @@ theme.loadEditor = function ()
 		CursorLine =		    { fg = darcula.none, bg = darcula.cursorLine , style = "NONE"},
 		CursorLineNr =		  { fg = darcula.cursorLineNr, bg = darcula.cursorLine },
 		Comment =		        { fg = darcula.comment },
-		Constant =		      { fg = darcula.constant, bg = darcula.none, style = 'italic' },
 		DiffAdd =				    { fg = darcula.none,  bg = darcula.diffAdd }, -- diff mode: Added line
 		DiffChange =			  { fg = darcula.none, bg = darcula.diffChange }, --  diff mode: Changed line
 		DiffDelete =			  { fg = darcula.none, bg = darcula.diffDelete }, -- diff mode: Deleted line
@@ -144,7 +143,6 @@ theme.loadEditor = function ()
 		StatusLineNC =  		{ fg = darcula.statusLineNC, bg = darcula.statusLine },
 		StatusLineTerm =		{ fg = darcula.statusLineFg, bg = darcula.statusLine },
 		StatusLineTermNC =	{ fg = darcula.statusLineNC, bg = darcula.statusLine },
-    String =            { fg = darcula.string },
 		TabLineFill =			  { fg = darcula.statusLine, bg = darcula.statusLine },
 		TablineSel =			  { fg = darcula.fg, bg = darcula.tabLineSel },
 		Tabline =				    { fg = darcula.statusLineFg },
@@ -231,7 +229,7 @@ theme.loadTreeSitter = function ()
         TSBoolean =                 { fg = darcula.keyword },    -- For booleans.
         TSCharacter =               { fg = darcula.string },    -- For characters.
         TSConstructor =             { fg = darcula.constructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        TSConstant =                { fg = darcula.yellow },    -- For constants
+        TSConstant =                { fg = darcula.constant},    -- For constants
         TSConstBuiltin =            { fg = darcula.blue },    -- For constant that are built in the language: `nil` in Lua.
         TSConstMacro =              { fg = darcula.blue },    -- For constants that are defined by macros: `NULL` in C.
         TSError =                   { fg = darcula.error },    -- For syntax/parser errors.
@@ -243,7 +241,7 @@ theme.loadTreeSitter = function ()
         TSLabel =                   { fg = darcula.red }, -- For labels: `label:` in C and `:label:` in Lua.
         TSNamespace =               { fg = darcula.yellow },    -- For identifiers referring to modules and namespaces.
         --TSNone =                    { },    -- TODO: docs
-        TSNumber =                  { fg = darcula.orange },    -- For all numbers
+        TSNumber =                  { fg = darcula.number },    -- For all numbers
         TSOperator =                { fg = darcula.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
         TSParameter =               { fg = darcula.paleblue }, -- For parameters of a function.
         TSParameterReference=       { fg = darcula.paleblue },    -- For references to parameters of a function.
@@ -251,7 +249,7 @@ theme.loadTreeSitter = function ()
         TSPunctDelimiter =          { fg = darcula.cyan }, -- For delimiters ie: `.`
         TSPunctBracket =            { fg = darcula.cyan }, -- For brackets and parens.
         TSPunctSpecial =            { fg = darcula.cyan }, -- For special punctutation that does not fall in the catagories before.
-        TSString =                  { fg = darcula.green },    -- For strings.
+        TSString =                  { fg = darcula.string },    -- For strings.
         TSStringRegex =             { fg = darcula.blue }, -- For regexes.
         TSStringEscape =            { fg = darcula.disabled }, -- For escape characters within a string.
         TSSymbol =                  { fg = darcula.yellow },    -- For identifiers referring to symbols or atoms.

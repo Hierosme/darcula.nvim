@@ -1,4 +1,4 @@
---                            M O O N L I G H T
+--                        G A L A X I E - D A R C U L A
 -- Colorscheme name:    darcula.nvim
 -- Description:         darcula colorscheme for NeoVim form moonlight.nvim
 -- Author:              https://github.com/Hierosme
