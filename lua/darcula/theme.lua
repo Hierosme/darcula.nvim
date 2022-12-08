@@ -139,7 +139,7 @@ theme.loadEditor = function ()
 		Visual =				    { fg = darcula.fg, bg = darcula.selection },
 		VisualNOS =				  { fg = darcula.none, bg = darcula.selection },
 		WarningMsg =			  { fg = darcula.yellow },
-		WildMenu =				  { fg = darcula.orange, bg = darcula.none, style = 'bold' },
+		WildMenu =				  { fg = darcula.menuFg, bg = darcula.menuSel, style = 'bold' },
 		CursorColumn =		  { fg = darcula.none, bg = darcula.cursorLine, style = "NONE" },
 		CursorLine =			  { fg = darcula.none, bg = darcula.none },
 		ToolbarLine =			  { fg = darcula.fg, bg = darcula.bg_alt },
