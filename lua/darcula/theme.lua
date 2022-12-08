@@ -491,7 +491,8 @@ theme.loadPlugins = function()
          DapBreakpoint =                         { fg = darcula.red },
          DapStopped =                            { fg = darcula.green },
 
-        -- nvim tree
+        -- Floatterm-- Impose color to the terminals
+        Floatterm = { fg=darcula.fg, bg=darcula.shCommand }
     }
 
     -- Options:
