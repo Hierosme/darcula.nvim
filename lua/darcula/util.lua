@@ -1,5 +1,5 @@
 local util = {}
-local moonlight = require('moonlight.theme')
+local darcula = require('darcula.theme')
 
 -- Go trough the table and highlight the group with the color values
 util.highlight = function (group, color)
@@ -14,19 +14,19 @@ util.highlight = function (group, color)
     if color.link then vim.cmd("highlight! link " .. group .. " " .. color.link) end
 end
 
--- Only define Moonlight if it's the active colorshceme
+-- Only define darcula if it's the active colorshceme
 function util.onColorScheme()
-  if vim.g.colors_name ~= "moonlight" then
-    vim.cmd [[autocmd! Moonlight]]
-    vim.cmd [[augroup! Moonlight]]
+  if vim.g.colors_name ~= "darcula" then
+    vim.cmd [[autocmd! darcula]]
+    vim.cmd [[augroup! darcula]]
   end
 end
 
 -- Change the background for the terminal, packer and qf windows
 util.contrast = function ()
-    vim.cmd [[augroup Moonlight]]
+    vim.cmd [[augroup darcula]]
     vim.cmd [[  autocmd!]]
-    vim.cmd [[  autocmd ColorScheme * lua require("moonlight.util").onColorScheme()]]
+    vim.cmd [[  autocmd ColorScheme * lua require("darcula.util").onColorScheme()]]
     vim.cmd [[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
     vim.cmd [[  autocmd FileType packer setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
     vim.cmd [[  autocmd FileType qf setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]]
@@ -40,17 +40,17 @@ function util.load()
     if vim.fn.exists("syntax_on") then vim.cmd("syntax reset") end
     vim.o.background = "dark"
     vim.o.termguicolors = true
-    vim.g.colors_name = "moonlight"
+    vim.g.colors_name = "darcula.nvim"
 
     -- Load plugins, treesitter and lsp async
     local async
     async = vim.loop.new_async(vim.schedule_wrap(function ()
-        moonlight.loadTerminal()
+        darcula.loadTerminal()
 
         -- imort tables for plugins, treesitter and lsp
-        local plugins = moonlight.loadPlugins()
-        local treesitter = moonlight.loadTreeSitter()
-        local lsp = moonlight.loadLSP()
+        local plugins = darcula.loadPlugins()
+        local treesitter = darcula.loadTreeSitter()
+        local lsp = darcula.loadLSP()
 
         -- loop trough the plugins table and highlight every member
         for group, colors in pairs(plugins) do
@@ -68,7 +68,7 @@ function util.load()
         end
 
         -- if contrast is enabled, apply it to sidebars and floating windows
-        if vim.g.moonlight_contrast == true then
+        if vim.g.darcula_contrast == true then
             util.contrast()
         end
         async:close()
@@ -76,8 +76,8 @@ function util.load()
     end))
 
     -- load the most importaint parts of the theme
-    local editor = moonlight.loadEditor()
-    local syntax = moonlight.loadSyntax()
+    local editor = darcula.loadEditor()
+    local syntax = darcula.loadSyntax()
 
     -- load editor highlights
     for group, colors in pairs(editor) do

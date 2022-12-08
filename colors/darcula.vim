@@ -1,5 +1,5 @@
 
-"                            M O O N L I G H T
+"                               D A R C U L A
 "      _..._         _..._         _..._         _..._         _..._
 "    .:::::::.     .::::. `.     .::::  `.     .::'   `.     .'     `.
 "   :::::::::::   :::::::.  :   ::::::    :   :::       :   :         :
@@ -7,16 +7,16 @@
 "   `:::::::::'   `::::::' .'   `:::::   .'   `::.     .'   `.       .'
 "     `':::''       `'::'-'       `'::.-'       `':..-'       `-...-'
 "
-" Colorscheme name:    moonlight.nvim
-" Description:         Port of VSCode's Moonlight colorscheme for NeoVim
-" Author:              https://github.com/shaunsingh
+" Colorscheme name:    darcula.nvim
+" Description:         Port of darcula form a fork of VSCode's Moonlight colorscheme for NeoVim
+" Author:              https://github.com/Hierosme
 
 lua << EOF
-package.loaded['moonlight'] = nil
-package.loaded['moonlight.util'] = nil
-package.loaded['moonlight.colors'] = nil
-package.loaded['moonlight.theme'] = nil
-package.loaded['moonlight.functions'] = nil
+package.loaded['darcula'] = nil
+package.loaded['darcula.util'] = nil
+package.loaded['darcula.colors'] = nil
+package.loaded['darcula.theme'] = nil
+package.loaded['darcula.functions'] = nil
 
-require('moonlight').set()
+require('darcula').set()
 EOF
