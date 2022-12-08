@@ -390,6 +390,7 @@ theme.loadPlugins = function()
         TelescopeNormal =                       { fg = darcula.fg, bg = darcula.float },
 
         -- NvimTree
+        NvimTreeNormal = { fg = darcula.fg, bg = darcula.bg },
         NvimTreeSymlink = { fg = darcula.fg },
         NvimTreeFolderName = { fg=darcula.fg },
         NvimTreeRootFolder = { fg=darcula.fg, style = 'bold'},
@@ -499,7 +500,7 @@ theme.loadPlugins = function()
          DapStopped =                            { fg = darcula.green },
 
         -- Floatterm-- Impose color to the terminals
-        Floatterm = { fg=darcula.fg, bg=darcula.shCommand }
+        Floatterm = { fg=darcula.fg, bg=darcula.ANSIDarkGray }
 
     }
 
