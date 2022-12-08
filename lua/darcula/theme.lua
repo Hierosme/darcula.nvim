@@ -92,18 +92,20 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
+    NormalFg =          { fg = darcula.fg},
 		NormalFloat =			  { fg = darcula.fg, bg = darcula.float }, -- normal text and background color
 		ColorColumn =			  { fg = darcula.none, bg = darcula.wrapGuide }, --  used for the columns set with 'colorcolumn'
 		Conceal =				    { fg = darcula.muted, bg = darcula.bg }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor =				    { fg = darcula.cursor, bg = darcula.none }, -- the character under the cursor
-		CursorIM =				  { fg = darcula.cursor, bg = darcula.none }, -- like Cursor, but used when in IME mode
-		Directory =				  { fg = darcula.blue, bg = darcula.none }, -- directory names (and other special names in listings)
-		DiffAdd =				    { fg = darcula.green, bg = darcula.none, style = 'reverse' }, -- diff mode: Added line
-		DiffChange =			  { fg = darcula.orange, bg = darcula.none, style = 'reverse' }, --  diff mode: Changed line
-		DiffDelete =			  { fg = darcula.red, bg = darcula.none, style = 'reverse' }, -- diff mode: Deleted line
-		DiffText =				  { fg = darcula.yellow, bg = darcula.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
-		EndOfBuffer =			  { fg = darcula.disabled },
-		ErrorMsg =				  { fg = darcula.none },
+		Cursor =				    { fg = darcula.cursor }, -- the character under the cursor
+		lCursor =				    { fg = darcula.cursor }, -- the character under the cursor
+		CursorIM =				  { fg = darcula.cursor }, -- like Cursor, but used when in IME mode
+		Directory =				  { fg = darcula.fg }, -- directory names (and other special names in listings)
+		DiffAdd =				    { fg = darcula.none,  bg = darcula.diffAdd }, -- diff mode: Added line
+		DiffChange =			  { fg = darcula.none, bg = darcula.diffChange }, --  diff mode: Changed line
+		DiffDelete =			  { fg = darcula.none, bg = darcula.diffDelete }, -- diff mode: Deleted line
+		DiffText =				  { fg = darcula.none, bg = darcula.diffText }, -- diff mode: Changed text within a changed line
+		EndOfBuffer =			  { fg = darcula.muted },
+		ErrorMsg =				  { fg = darcula.errorMsg },
 		Folded =				    { fg = darcula.disabled, bg = darcula.none, style = 'italic' },
 		FoldColumn =			  { fg = darcula.blue },
 		IncSearch =				  { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
@@ -138,7 +140,7 @@ theme.loadEditor = function ()
 		VisualNOS =				  { fg = darcula.none, bg = darcula.selection },
 		WarningMsg =			  { fg = darcula.yellow },
 		WildMenu =				  { fg = darcula.orange, bg = darcula.none, style = 'bold' },
-		CursorColumn =		  { fg = darcula.none, bg = darcula.active },
+		CursorColumn =		  { fg = darcula.none, bg = darcula.cursorLine, style = "NONE" },
 		CursorLine =			  { fg = darcula.none, bg = darcula.none },
 		ToolbarLine =			  { fg = darcula.fg, bg = darcula.bg_alt },
 		ToolbarButton =			{ fg = darcula.fg, bg = darcula.none, style = 'bold' },
