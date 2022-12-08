@@ -120,7 +120,7 @@ theme.loadEditor = function ()
 		Question =				  { fg = darcula.green },
 		QuickFixLine =		  { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
 		qfLineNr =				  { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
-		Search =				    { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
+		Search =				    { fg = darcula.fg, bg = darcula.selection },
 		SpecialKey =			  { fg = darcula.purple },
 		SpellBad =				  { fg = darcula.red, bg = darcula.none, style = 'italic,undercurl' },
 		SpellCap =				  { fg = darcula.blue, bg = darcula.none, style = 'italic,undercurl' },
@@ -134,7 +134,7 @@ theme.loadEditor = function ()
 		TablineSel =			  { fg = darcula.bg, bg = darcula.accent },
 		Tabline =				    { fg = darcula.fg },
 		Title =					    { fg = darcula.green, bg = darcula.none, style = 'bold' },
-		Visual =				    { fg = darcula.none, bg = darcula.selection },
+		Visual =				    { fg = darcula.fg, bg = darcula.selection },
 		VisualNOS =				  { fg = darcula.none, bg = darcula.selection },
 		WarningMsg =			  { fg = darcula.yellow },
 		WildMenu =				  { fg = darcula.orange, bg = darcula.none, style = 'bold' },
@@ -493,6 +493,7 @@ theme.loadPlugins = function()
 
         -- Floatterm-- Impose color to the terminals
         Floatterm = { fg=darcula.fg, bg=darcula.shCommand }
+
     }
 
     -- Options:
