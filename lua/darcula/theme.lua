@@ -12,19 +12,19 @@ theme.loadSyntax = function ()
 		Constant =					{ fg = darcula.constant }, -- any constant
 		String =					{ fg = darcula.string, bg = darcula.none, style= 'italic' }, -- Any string
 		Character =					{ fg = darcula.string }, -- any character constant: 'c = { fg='\n'
-		Number =					{ fg = darcula.number }, -- a number constant: 5
-		Boolean =					{ fg = darcula.orange }, -- a boolean constant: TRUE, false
-		Float =						{ fg = darcula.orange }, -- a floating point constant: 2.3e10
+		Number =					{ fg = darcula.ANSICyan }, -- a number constant: 5
+		Boolean =					{ fg = darcula.ANSICyan }, -- a boolean constant: TRUE, false
+		Float =						{ fg = darcula.ANSICyan }, -- a floating point constant: 2.3e10
 		Statement =					{ fg = darcula.keyword }, -- any statement
 		Label =						{ fg = darcula.purple }, -- case, default, etc.
-		Operator =					{ fg = darcula.cyan }, -- sizeof", "+", "*", etc.
+		Operator =					{ fg = darcula.string }, -- sizeof", "+", "*", etc.
 		Exception =					{ fg = darcula.cyan }, -- try, catch, throw
 		PreProc =					{ fg = darcula.metaData }, -- generic Preprocessor
-		Include =					{ fg = darcula.blue }, -- preprocessor #include
+		Include =					{ fg = darcula.ANSIYellow}, -- preprocessor #include
 		-- Define =					{ fg = darcula.pink }, -- preprocessor #define
 		Macro =						{ fg = darcula.cyan }, -- same as Define
 		Typedef =					{ fg = darcula.red }, -- A typedef
-		PreCondit =					{ fg = darcula.cyan }, -- preprocessor #if, #else, #endif, etc.
+		PreCondit =					{ fg = darcula.ANSIYellow }, -- preprocessor #if, #else, #endif, etc.
 		Special =					{ fg = darcula.metaData }, -- any special symbol
 		SpecialChar =				{ fg = darcula.metaData }, -- special character in a constant
 		Tag =						    { fg = darcula.keyword }, -- you can use CTRL-] on this
