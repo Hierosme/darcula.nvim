@@ -230,39 +230,39 @@ theme.loadTreeSitter = function ()
         TSCharacter =               { fg = darcula.string },    -- For characters.
         TSConstructor =             { fg = darcula.constructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
         TSConstant =                { fg = darcula.constant},    -- For constants
-        TSConstBuiltin =            { fg = darcula.blue },    -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro =              { fg = darcula.blue },    -- For constants that are defined by macros: `NULL` in C.
-        TSError =                   { fg = darcula.error },    -- For syntax/parser errors.
-        TSException =               { fg = darcula.yellow },    -- For exception related keywords.
-        TSField =                   { fg = darcula.gray }, -- For fields.
-        TSFloat =                   { fg = darcula.red },    -- For floats.
-        TSFuncMacro =               { fg = darcula.blue },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude =                 { fg = darcula.cyan },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSLabel =                   { fg = darcula.red }, -- For labels: `label:` in C and `:label:` in Lua.
-        TSNamespace =               { fg = darcula.yellow },    -- For identifiers referring to modules and namespaces.
-        --TSNone =                    { },    -- TODO: docs
+        TSConstBuiltin =            { fg = darcula.keyword },    -- For constant that are built in the language: `nil` in Lua.
+        TSConstMacro =              { fg = darcula.macroName },    -- For constants that are defined by macros: `NULL` in C.
+        TSError =                   { fg = darcula.codeError },    -- For syntax/parser errors.
+        TSException =               { fg = darcula.keyword },    -- For exception related keywords.
+        TSField =                   { fg = darcula.constant }, -- For fields.
+        TSFloat =                   { fg = darcula.number },    -- For floats.
+        TSFuncMacro =               { fg = darcula.macroName },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+        TSInclude =                 { fg = darcula.keyword },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+        TSLabel =                   { fg = darcula.fg }, -- For labels: `label:` in C and `:label:` in Lua.
+        TSNamespace =               { fg = darcula.ANSIMagenta },    -- For identifiers referring to modules and namespaces.
+        TSNone =                    { fg = darcula.fg },    -- TODO: docs
         TSNumber =                  { fg = darcula.number },    -- For all numbers
-        TSOperator =                { fg = darcula.cyan }, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter =               { fg = darcula.paleblue }, -- For parameters of a function.
-        TSParameterReference=       { fg = darcula.paleblue },    -- For references to parameters of a function.
-        TSProperty =                { fg = darcula.paleblue }, -- Same as `TSField`.
-        TSPunctDelimiter =          { fg = darcula.cyan }, -- For delimiters ie: `.`
-        TSPunctBracket =            { fg = darcula.cyan }, -- For brackets and parens.
-        TSPunctSpecial =            { fg = darcula.cyan }, -- For special punctutation that does not fall in the catagories before.
+        TSOperator =                { fg = darcula.fg }, -- For any operator: `+`, but also `->` and `*` in C.
+        TSParameter =               { fg = darcula.fg }, -- For parameters of a function.
+        TSParameterReference=       { fg = darcula.ANSIMagenta },    -- For references to parameters of a function.
+        TSProperty =                { fg = darcula.constant }, -- Same as `TSField`.
+        TSPunctDelimiter =          { fg = darcula.normal }, -- For delimiters ie: `.`
+        TSPunctBracket =            { fg = darcula.normal }, -- For brackets and parens.
+        TSPunctSpecial =            { fg = darcula.specialComment }, -- For special punctutation that does not fall in the catagories before.
         TSString =                  { fg = darcula.string },    -- For strings.
-        TSStringRegex =             { fg = darcula.blue }, -- For regexes.
-        TSStringEscape =            { fg = darcula.disabled }, -- For escape characters within a string.
-        TSSymbol =                  { fg = darcula.yellow },    -- For identifiers referring to symbols or atoms.
-        TSType =                    { fg = darcula.purple },    -- For types.
-        TSTypeBuiltin =             { fg = darcula.purple },    -- For builtin types.
-        TSTag =                     { fg = darcula.red },    -- Tags like html tag names.
-        TSTagDelimiter =            { fg = darcula.yellow },    -- Tag delimiter like `<` `>` `/`
-        TSText =                    { fg = darcula.text },    -- For strings considered text in a markup language.
-        TSTextReference =           { fg = darcula.yellow }, -- FIXME
-        TSEmphasis =                { fg = darcula.paleblue },    -- For text to be represented with emphasis.
+        TSStringRegex =             { fg = darcula.number }, -- For regexes.
+        TSStringEscape =            { fg = darcula.keyword }, -- For escape characters within a string.
+        TSSymbol =                  { fg = darcula.menuSel },    -- For identifiers referring to symbols or atoms.
+        TSType =                    { fg = darcula.fg },    -- For types.
+        TSTypeBuiltin =             { fg = darcula.keyword },    -- For builtin types.
+        TSTag =                     { fg = darcula.ptag },    -- Tags like html tag names.
+        TSTagDelimiter =            { fg = darcula.ptag },    -- Tag delimiter like `<` `>` `/`
+        TSText =                    { fg = darcula.fg },    -- For strings considered text in a markup language.
+        TSTextReference =           { fg = darcula.ANSIYellow }, -- FIXME
+        TSEmphasis =                { fg = darcula.fg, bg = darcula.none, style = 'italic' },    -- For text to be represented with emphasis.
         TSUnderline =               { fg = darcula.fg, bg = darcula.none, style = 'underline' },    -- For text to be represented with an underline.
-        TSStrike =                  { },    -- For strikethrough text.
-        TSTitle =                   { fg = darcula.paleblue, bg = darcula.none, style = 'bold' },    -- Text that is part of a title.
+        TSStrike =                  { fg = darcula.fg, bg = darcula.none, style = 'strikethrough'},    -- For strikethrough text.
+        TSTitle =                   { fg = darcula.fg, bg = darcula.none, style = 'bold,underline' },    -- Text that is part of a title.
         TSLiteral =                 { fg = darcula.fg },    -- Literal text.
         TSURI =                     { fg = darcula.link },    -- Any URI like a link or email.
     }
@@ -291,11 +291,11 @@ theme.loadTreeSitter = function ()
     if vim.g.darcula_italic_functions == true then
         treesitter.TSFunction =                { fg = darcula.constructor, style = 'italic' }    -- For fuction (calls and definitions).
         treesitter.TSMethod =                  { fg = darcula.constructor, style = 'italic' }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = darcula.cyan, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
+        treesitter.TSFuncBuiltin =             { fg = darcula.fg, style = 'italic' }    -- For builtin functions: `table.insert` in Lua.
     else
         treesitter.TSFunction =                { fg = darcula.constructor }    -- For fuction (calls and definitions).
         treesitter.TSMethod =                  { fg = darcula.constructor }    -- For method calls and definitions.
-        treesitter.TSFuncBuiltin =             { fg = darcula.cyan }    -- For builtin functions: `table.insert` in Lua.
+        treesitter.TSFuncBuiltin =             { fg = darcula.fg }    -- For builtin functions: `table.insert` in Lua.
     end
 
     if vim.g.darcula_italic_variables == true then
