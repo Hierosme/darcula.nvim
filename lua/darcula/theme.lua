@@ -18,12 +18,12 @@ theme.loadSyntax = function ()
 		Statement =					{ fg = darcula.keyword }, -- any statement
 		Label =						{ fg = darcula.purple }, -- case, default, etc.
 		Operator =					{ fg = darcula.string }, -- sizeof", "+", "*", etc.
-		Exception =					{ fg = darcula.cyan }, -- try, catch, throw
+		Exception =					{ fg = darcula.constructer }, -- try, catch, throw
 		PreProc =					{ fg = darcula.metaData }, -- generic Preprocessor
 		Include =					{ fg = darcula.ANSIYellow}, -- preprocessor #include
 		-- Define =					{ fg = darcula.pink }, -- preprocessor #define
 		Macro =						{ fg = darcula.cyan }, -- same as Define
-		Typedef =					{ fg = darcula.red }, -- A typedef
+		Typedef =					{ fg = darcula.typeDef }, -- A typedef
 		PreCondit =					{ fg = darcula.ANSIYellow }, -- preprocessor #if, #else, #endif, etc.
 		Special =					{ fg = darcula.metaData }, -- any special symbol
 		SpecialChar =				{ fg = darcula.metaData }, -- special character in a constant
@@ -37,17 +37,17 @@ theme.loadSyntax = function ()
 		Todo =						{ fg = darcula.yellow, bg = darcula.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     htmlLink = { fg = darcula.link, style = "underline" },
-    htmlH1 = { fg = darcula.cyan, style = "bold" },
-    htmlH2 = { fg = darcula.red, style = "bold" },
-    htmlH3 = { fg = darcula.green, style = "bold" },
-    htmlH4 = { fg = darcula.yellow, style = "bold" },
-    htmlH5 = { fg = darcula.purple, style = "bold" },
-    markdownH1 = { fg = darcula.cyan, style = "bold" },
-    markdownH2 = { fg = darcula.red, style = "bold" },
-    markdownH3 = { fg = darcula.green, style = "bold" },
-    markdownH1Delimiter = { fg = darcula.cyan },
-    markdownH2Delimiter = { fg = darcula.red },
-    markdownH3Delimiter = { fg = darcula.green },
+    htmlH1 = { fg = darcula.ANSIBrightCyan, style = "bold" },
+    htmlH2 = { fg = darcula.ANSIBrightRed, style = "bold" },
+    htmlH3 = { fg = darcula.ANSIBrightGreen, style = "bold" },
+    htmlH4 = { fg = darcula.ANSIBrightYellow, style = "bold" },
+    htmlH5 = { fg = darcula.ANSIBrightMagenta, style = "bold" },
+    markdownH1 = { fg = darcula.ANSIBrightCyan, style = "bold" },
+    markdownH2 = { fg = darcula.ANSIBrightRed, style = "bold" },
+    markdownH3 = { fg = darcula.ANSIBrightGreen, style = "bold" },
+    markdownH1Delimiter = { fg = darcula.ANSIBrightCyan },
+    markdownH2Delimiter = { fg = darcula.ANSIBrightRed },
+    markdownH3Delimiter = { fg = darcula.ANSIBrightGreen },
 	}
 
 	-- Options:
@@ -78,9 +78,9 @@ theme.loadSyntax = function ()
 	end
 
 	if vim.g.darcula_italic_variables == true then
-		Identifier =				{fg = darcula.gray, bg = darcula.none, style = 'italic'}; -- any variable name
+		Identifier =				{fg = darcula.fg, bg = darcula.none, style = 'italic'}; -- any variable name
     else
-		Identifier =				{fg = darcula.gray}; -- any variable name
+		Identifier =				{fg = darcula.fg}; -- any variable name
     end
 
     return syntax
@@ -120,9 +120,12 @@ theme.loadEditor = function ()
 		ModeMsg =				    { fg = darcula.stdOutput },
 		MoreMsg =				    { fg = darcula.fg },
 		NonText =				    { fg = darcula.muted },
-    Normal =            { fg=darcula.fg, darcula.bg},
-		NormalFloat =			  { fg = darcula.fg, bg = darcula.float }, -- normal text and background color
+    Normal =            { fg = darcula.fg, darcula.bg},
+		NormalFloat =			  { fg = darcula.menuFg, bg = darcula.menu }, -- normal text and background color
 		NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
+		NormalNC =			    { fg = darcula.fg },
+    MsgArea =           { fg = darcula.fg },
+    MsgSeparator =      { fg = darcula.statusLineFg, bg = darcula.statusLine },
 		Pmenu =					    { fg = darcula.menuFg, bg = darcula.menu },
 		PmenuSel =				  { fg = darcula.menuFg, bg = darcula.menuSel },
 		PmenuSbar =				  { fg = darcula.menu, bg = darcula.menu },
@@ -137,6 +140,7 @@ theme.loadEditor = function ()
 		SpellCap =				  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
 		SpellLocal =			  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
 		SpellRare =				  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
+    Substitube =        { fg = darcula.none, bg = darcula.search },
 		StatusLine =			  { fg = darcula.statusLineFg, bg = darcula.statusLine },
 		SignColumn =			  { fg = darcula.none, bg = darcula.gutter },
 		StatusLineNC =  		{ fg = darcula.statusLineNC, bg = darcula.statusLine },
@@ -160,7 +164,7 @@ theme.loadEditor = function ()
 		InsertMode =			  { fg = darcula.green, bg = darcula.none, style = 'reverse' },
 		ReplacelMode =			{ fg = darcula.red, bg = darcula.none, style = 'reverse' },
 		VisualMode =			  { fg = darcula.purple, bg = darcula.none, style = 'reverse' },
-		CommandMode =			  { fg = darcula.gray, bg = darcula.none, style = 'reverse' },
+		CommandMode =			  { fg = darcula.fg, bg = darcula.none, style = 'reverse' },
 		Warnings =				  { fg = darcula.yellow },
     healthError =       { fg = darcula.error },
     healthSuccess =     { fg = darcula.green },
