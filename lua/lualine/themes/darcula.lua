@@ -3,8 +3,8 @@ local colors = require('darcula.colors')
 local darcula = {}
 
 darcula.normal = {
-	a = {fg = colors.bg, bg = colors.ANSIBlack, gui = 'bold'},
-	b = {fg = colors.bg, bg = colors.ANSIBlack, gui = 'bold'},
+	a = {fg = colors.menuFg, bg = colors.ANSIDarkGray, gui = 'bold'},
+	b = {fg = colors.menuFg, bg = colors.ANSIDarkGray, gui = 'bold'},
 	c = {fg = colors.menuFg, bg = colors.menu},
 }
 
@@ -14,23 +14,23 @@ darcula.insert = {
 }
 
 darcula.visual = {
-	a = {fg = colors.menu, bg = colors.ANSIBrightBlue, gui = 'bold'},
-	b = {fg = colors.menuFg, bg = colors.menu},
+	a = {fg = colors.bg, bg = colors.ANSIBrightBlue, gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightBlue, gui = 'bold'},
 }
 
 darcula.replace = {
-	a = {fg = colors.menu, bg = colors.ANSIBrightRed, gui = 'bold'},
-	b = {fg = colors.menuFg, bg = colors.menu},
+	a = {fg = colors.bg, bg = colors.ANSIBrightRed, gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightRed, gui = 'bold'},
 }
 
 darcula.command = {
 	a = {fg = colors.bg, bg = colors.ANSIBrightYellow, gui = 'bold'},
-	b = {fg = colors.menuFg, bg = colors.menu},
+	b = {fg = colors.bg, bg = colors.ANSIBrightYellow, gui = 'bold'},
 }
 
 darcula.inactive = {
-  a = {fg = colors.disabled, bg = colors.menu, gui = 'bold'},
-  b = {fg = colors.disabled, bg = colors.menu},
-  c = {fg = colors.disabled, bg = colors.menu}
+  a = {fg = colors.menuFg, bg = colors.menu, gui = 'bold'},
+  b = {fg = colors.menuFg, bg = colors.menu},
+  c = {fg = colors.menuFg, bg = colors.menu}
 }
 return darcula

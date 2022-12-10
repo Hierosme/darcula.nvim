@@ -1,11 +1,6 @@
 
 "                               D A R C U L A
-"      _..._         _..._         _..._         _..._         _..._
-"    .:::::::.     .::::. `.     .::::  `.     .::'   `.     .'     `.
-"   :::::::::::   :::::::.  :   ::::::    :   :::       :   :         :
-"   :::::::::::   ::::::::  :   ::::::    :   :::       :   :         :
-"   `:::::::::'   `::::::' .'   `:::::   .'   `::.     .'   `.       .'
-"     `':::''       `'::'-'       `'::.-'       `':..-'       `-...-'
+"
 "
 " Colorscheme name:    darcula.nvim
 " Description:         Port of darcula form a fork of VSCode's Moonlight colorscheme for NeoVim
