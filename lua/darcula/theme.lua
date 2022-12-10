@@ -534,7 +534,7 @@ theme.loadPlugins = function()
          DapStopped =                            { fg = darcula.green },
 
         -- Floatterm-- Impose color to the terminals
-        Floatterm = { fg=darcula.fg, bg=darcula.ANSIDarkGray }
+        Floatterm = { fg=darcula.fg, bg=darcula.bg }
 
     }
 
