@@ -481,9 +481,9 @@ theme.loadPlugins = function()
         WhichKeyGroup =                         { fg = darcula.keyword },
         WhichKeySeperator =                     { fg = darcula.diffAdd },
         WhichKeyDesc =                          { fg = darcula.identifierUnderCaret, style = 'italic' },
-        WhichKeyFloat =                         { bg = darcula.menuFg },
-        WhichKeyBorder =                        { bg = darcula.menuFg },
-        WhichKeyKeyValue =                      { bg = darcula.comment },
+        WhichKeyFloat =                         { bg = darcula.menu },
+        WhichKeyBorder =                        { bg = darcula.menu },
+        WhichKeyKeyValue =                      { bg = darcula.menu },
 
         -- LspSaga
         DiagnosticError =                       { fg = darcula.error },
