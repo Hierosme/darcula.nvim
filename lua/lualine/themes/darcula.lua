@@ -3,14 +3,14 @@ local colors = require('darcula.colors')
 local darcula = {}
 
 darcula.normal = {
-	a = {fg = colors.bg, bg = colors.ANSIWhite, gui = 'bold'},
-	b = {fg = colors.blue, bg = colors.menu},
-	c = {fg = colors.fg, bg = colors.menu},
+	a = {fg = colors.bg, bg = colors.ANSIBlack, gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBlack, gui = 'bold'},
+	c = {fg = colors.menuFg, bg = colors.menu},
 }
 
 darcula.insert = {
-	a = {fg = colors.menu, bg = colors.ANSIBrightGreen, gui = 'bold'},
-	b = {fg = colors.title, bg = colors.menu},
+	a = {fg = colors.bg, bg = colors.ANSIBrightGreen, gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightGreen, gui = 'bold'},
 }
 
 darcula.visual = {
