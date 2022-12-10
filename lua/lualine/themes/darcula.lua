@@ -9,23 +9,23 @@ darcula.normal = {
 }
 
 darcula.insert = {
-	a = {fg = colors.bg, bg = colors.ANSIBrightCyan , gui = 'bold'},
-	b = {fg = colors.bg, bg = colors.ANSIBrightGreen , gui = 'bold'},
+	a = {fg = colors.bg, bg = colors.UIGreen , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.UIGreen , gui = 'bold'},
 }
 
 darcula.visual = {
-	a = {fg = colors.bg, bg = colors.ANSIBrightBlue , gui = 'bold'},
-	b = {fg = colors.bg, bg = colors.ANSIBrightBlue , gui = 'bold'},
+	a = {fg = colors.bg, bg = colors.UIBlue , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.UIBlue , gui = 'bold'},
 }
 
 darcula.replace = {
-	a = {fg = colors.bg, bg = colors.ANSIBrightRed , gui = 'bold'},
-	b = {fg = colors.bg, bg = colors.ANSIBrightRed , gui = 'bold'},
+	a = {fg = colors.bg, bg = colors.UIRed , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.UIRed , gui = 'bold'},
 }
 
 darcula.command = {
-	a = {fg = colors.bg, bg = colors.ANSIBrightYellow , gui = 'bold'},
-	b = {fg = colors.bg, bg = colors.ANSIBrightYellow , gui = 'bold'},
+	a = {fg = colors.bg, bg = colors.UIBrown , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.UIBrown , gui = 'bold'},
 }
 
 darcula.inactive = {
