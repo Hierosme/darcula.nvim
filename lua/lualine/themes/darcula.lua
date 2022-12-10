@@ -4,7 +4,7 @@ local darcula = {}
 
 darcula.normal = {
 	a = {fg = colors.bg, bg = colors.ANSIWhite, gui = 'bold'},
-	b = {fg = colors.title, bg = colors.menu},
+	b = {fg = colors.blue, bg = colors.menu},
 	c = {fg = colors.fg, bg = colors.menu},
 }
 
