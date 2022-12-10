@@ -108,7 +108,7 @@ theme.loadEditor = function ()
 		DiffText =				  { fg = darcula.none, bg = darcula.diffText }, -- diff mode: Changed text within a changed line
 		Directory =				  { fg = darcula.fg }, -- directory names (and other special names in listings)
 		EndOfBuffer =			  { fg = darcula.muted },
-		ErrorMsg =				  { fg = darcula.errorMsg },
+		-- ErrorMsg =				  { fg = darcula.errorMsg }
 		Folded =				    { fg = darcula.foldedFg, bg = darcula.foldedBg, style = 'italic' },
 		FoldColumn =			  { fg = darcula.foldedFg, bg = darcula.foldedBg },
 		IncSearch =				  { fg = darcula.none, bg = darcula.incSearch },
@@ -121,7 +121,6 @@ theme.loadEditor = function ()
 		MoreMsg =				    { fg = darcula.fg },
 		NonText =				    { fg = darcula.muted },
     Normal =            { fg=darcula.fg, darcula.bg},
-    NormalFg =          { fg = darcula.fg},
 		NormalFloat =			  { fg = darcula.fg, bg = darcula.float }, -- normal text and background color
 		NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
 		Pmenu =					    { fg = darcula.menuFg, bg = darcula.menu },
@@ -130,7 +129,7 @@ theme.loadEditor = function ()
 		PmenuThumb =			  { fg = darcula.menuSBar, bg = darcula.menuSBar },
 		Question =				  { fg = darcula.fg },
 		QuickFixLine =		  { fg = darcula.fg },
-		qfLineNr =				  { fg = darcula.highlight, bg = darcula.white, style = 'reverse' },
+		qfLineNr =				  { fg = darcula.lineNumber, bg = darcula.gutter },
 		Search =				    { fg = darcula.none, bg = darcula.search },
     Special =           { fg = darcula.metaData },
 		SpecialKey =			  { fg = darcula.muted },
@@ -172,29 +171,46 @@ theme.loadEditor = function ()
     DashboardCenter =   { fg = darcula.cyan },
     DashboardFooter =   { fg = darcula.green, style = "italic" },
 
+    docComment = { darcula.docComment, bg = darcula.null, style = 'italic'},
+    NormalFg = { fg = darcula.fg },
+    GitAddStripe = { fg = darcula.addStripe, bg = darcula.addStripe },
+    GitChangeStripe = { fg = darcula.changeStripe, bg = darcula.changeStripe },
+    GitDeleteStripe = { fg = darcula.deleteStripe, bg = darcula.gutter },
+    CodeError = { fg = darcula.null, bg = darcula.codeError },
+    CodeWarning = { fg = darcula.null, bg = darcula.codeWarning },
+    CodeInfo = { fg = darcula.null, bg = darcula.infoStripe },
+    CodeHint = { fg = darcula.hintFg, bg = darcula.hintBg },
+    ErrorSign = { fg = darcula.errorStripe, bg = darcula.gutter },
+    WarningSign = { fg = darcula.warnStripe, bg = darcula.gutter },
+    InfoSign = { fg = darcula.infoStripe, bg = darcula.gutter },
+    HintSign = { fg = darcula.hintStripe, bg = darcula.gutter },
+    IdentifierUnderCaret = { fg = darcula.null, bg = darcula.identifierUnderCaret },
+    IdentifierUnderCaretWrite = { fg = darcula.null, bg = darcula.identifierUnderCaretWrite },
+    InstanceField = { fg = darcula.constant },
+    UIDialog = { fg = darcula.fg, bg = darcula.statusLine },
+    UIBorder = { fg = darcula.UIBorder, bg = darcula.statusLine },
+    UISelection = { fg = darcula.null, bg = darcula.UISelection },
+
+
 	}
 
     -- Options:
 
     --Set transparent background
-    --   if vim.g.darcula_disable_background == true then
-      -- editor.Normal =				{ fg = darcula.fg, bg = darcula.none } -- normal text and background color
-      -- editor.SignColumn =			{ fg = darcula.fg, bg = darcula.none }
-    --   else
-      -- editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
-      -- editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
-      --   end
-    --
-		editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
-		editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
+    if vim.g.darcula_disable_background == true then
+      editor.Normal =				{ fg = darcula.fg, bg = darcula.none } -- normal text and background color
+      editor.SignColumn =			{ fg = darcula.fg, bg = darcula.none }
+    else
+      editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
+      editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
+    end
 
     -- Remove window split borders
-    --   if vim.g.darcula_borders == true then
-      -- editor.VertSplit =				{ fg = darcula.border }
-    --   else
-      -- editor.VertSplit =				{ fg = darcula.bg }
-    --   end
-    editor.VertSplit =				{ fg = darcula.border }
+    if vim.g.darcula_borders == true then
+      editor.VertSplit =				{ fg = darcula.border }
+    else
+      editor.VertSplit =				{ fg = darcula.bg }
+    end
 
     return editor
 end
@@ -262,7 +278,7 @@ theme.loadTreeSitter = function ()
         TSEmphasis =                { fg = darcula.fg, bg = darcula.none, style = 'italic' },    -- For text to be represented with emphasis.
         TSUnderline =               { fg = darcula.fg, bg = darcula.none, style = 'underline' },    -- For text to be represented with an underline.
         TSStrike =                  { fg = darcula.fg, bg = darcula.none, style = 'strikethrough'},    -- For strikethrough text.
-        TSTitle =                   { fg = darcula.fg, bg = darcula.none, style = 'bold,underline' },    -- Text that is part of a title.
+        TSTitle =                   { fg = darcula.paleblue, bg = darcula.none, style = 'bold,underline' },    -- Text that is part of a title.
         TSLiteral =                 { fg = darcula.fg },    -- Literal text.
         TSURI =                     { fg = darcula.link },    -- Any URI like a link or email.
     }
