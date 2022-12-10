@@ -92,12 +92,12 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-    Char =              { fg = darcula.string },
-		ColorColumn =			  { fg = darcula.none, bg = darcula.wrapGuide }, --  used for the columns set with 'colorcolumn'
+    -- Char =              { fg = darcula.string },
+		-- ColorColumn =			  { fg = darcula.none, bg = darcula.wrapGuide }, --  used for the columns set with 'colorcolumn'
 		Conceal =				    { fg = darcula.muted, bg = darcula.bg }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =				    { fg = darcula.cursor }, -- the character under the cursor
 		lCursor =				    { fg = darcula.cursor }, -- the character under the cursor
-		CursorColumn =		  { fg = darcula.none, bg = darcula.cursorLine },
+		CursorColumn =		  { fg = darcula.none, bg = darcula.wrapGuide },
 		CursorIM =				  { fg = darcula.cursor }, -- like Cursor, but used when in IME mode
 		CursorLine =		    { fg = darcula.none, bg = darcula.cursorLine , style = "NONE"},
 		CursorLineNr =		  { fg = darcula.cursorLineNr, bg = darcula.cursorLine },
@@ -108,7 +108,8 @@ theme.loadEditor = function ()
 		DiffText =				  { fg = darcula.none, bg = darcula.diffText }, -- diff mode: Changed text within a changed line
 		Directory =				  { fg = darcula.fg }, -- directory names (and other special names in listings)
 		EndOfBuffer =			  { fg = darcula.muted },
-		-- ErrorMsg =				  { fg = darcula.errorMsg }
+		ErrorMsg =				  { fg = darcula.errorMsg },
+    Error =             { fg = darcula.error },
 		Folded =				    { fg = darcula.foldedFg, bg = darcula.foldedBg, style = 'italic' },
 		FoldColumn =			  { fg = darcula.foldedFg, bg = darcula.foldedBg },
 		IncSearch =				  { fg = darcula.none, bg = darcula.incSearch },
@@ -120,9 +121,8 @@ theme.loadEditor = function ()
 		ModeMsg =				    { fg = darcula.stdOutput },
 		MoreMsg =				    { fg = darcula.fg },
 		NonText =				    { fg = darcula.muted },
-    Normal =            { fg = darcula.fg, darcula.bg},
 		NormalFloat =			  { fg = darcula.menuFg, bg = darcula.menu }, -- normal text and background color
-		NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
+		-- NormalMode =			  { fg = darcula.accent, bg = darcula.none, style = 'reverse' },
 		NormalNC =			    { fg = darcula.fg },
     MsgArea =           { fg = darcula.fg },
     MsgSeparator =      { fg = darcula.statusLineFg, bg = darcula.statusLine },
@@ -133,72 +133,72 @@ theme.loadEditor = function ()
 		PmenuThumb =			  { fg = darcula.menuSBar, bg = darcula.menuSBar },
 		Question =				  { fg = darcula.fg },
 		QuickFixLine =		  { fg = darcula.fg },
-		qfLineNr =				  { fg = darcula.lineNumber, bg = darcula.gutter },
+		-- qfLineNr =				  { fg = darcula.lineNumber, bg = darcula.gutter },
     RedrawDebugClear =  { fg = darcula.fg, bg = darcula.duplicateFromServer },
     RedrawDebugComposed = { fg = darcula.fg, bg = darcula.search },
     RedrawDebugRecompose = { fg = darcula.fg, bg = darcula.codeError },
 		Search =				    { fg = darcula.none, bg = darcula.search },
     Special =           { fg = darcula.metaData },
 		SpecialKey =			  { fg = darcula.muted },
-		SpellBad =				  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
-		SpellCap =				  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
-		SpellLocal =			  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
-		SpellRare =				  { fg = darcula.typo, bg = darcula.none, style = 'italic,undercurl' },
+		SpellBad =				  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
+		SpellCap =				  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
+		SpellLocal =			  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
+		SpellRare =				  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
     Substitube =        { fg = darcula.none, bg = darcula.search },
-		StatusLine =			  { fg = darcula.statusLineFg, bg = darcula.statusLine },
 		SignColumn =			  { fg = darcula.none, bg = darcula.gutter },
+		StatusLine =			  { fg = darcula.statusLineFg, bg = darcula.statusLine },
 		StatusLineNC =  		{ fg = darcula.statusLineNC, bg = darcula.statusLine },
-		StatusLineTerm =		{ fg = darcula.statusLineFg, bg = darcula.statusLine },
+    StatusLineTerm =		{ fg = darcula.statusLineFg, bg = darcula.statusLine },
 		StatusLineTermNC =	{ fg = darcula.statusLineNC, bg = darcula.statusLine },
+		Tabline =				    { fg = darcula.statusLineFg , bg = darcula.statusLine},
 		TabLineFill =			  { fg = darcula.statusLine, bg = darcula.statusLine },
 		TablineSel =			  { fg = darcula.fg, bg = darcula.tabLineSel },
-		Tabline =				    { fg = darcula.statusLineFg },
-		Terminal =				  { fg = darcula.stdOutput },
-		Title =					    { fg = darcula.muted },
+		Terminal =				  { fg = darcula.stdOutput, bg = darcula.bg },
+		Title =					    { fg = darcula.metaData },
 		Type =					    { fg = darcula.keyword },
 		Typedef =					  { fg = darcula.typeDef },
 		Todo =					    { fg = darcula.todo, bg = darcula.none, style = 'italic' },
 		Visual =				    { fg = darcula.none, bg = darcula.selection },
 		VisualNOS =				  { fg = darcula.none, bg = darcula.selection },
-		VertSplit =				  { fg = darcula.muted },
+		WildMenu =				  { fg = darcula.menuFg, bg = darcula.menuSel },
+		-- VertSplit =				  { fg = darcula.muted },
 		WarningMsg =			  { fg = darcula.warning },
-		WildMenu =				  { fg = darcula.menuFg, bg = darcula.menuSel, style = 'bold' },
-    Whitespace =        { fg = darcula.none , bg = darcula.muted },
-		ToolbarLine =			  { fg = darcula.fg, bg = darcula.bg_alt },
-		ToolbarButton =			{ fg = darcula.fg, bg = darcula.none, style = 'bold' },
-		InsertMode =			  { fg = darcula.green, bg = darcula.none, style = 'reverse' },
-		ReplacelMode =			{ fg = darcula.red, bg = darcula.none, style = 'reverse' },
-		VisualMode =			  { fg = darcula.purple, bg = darcula.none, style = 'reverse' },
-		CommandMode =			  { fg = darcula.fg, bg = darcula.none, style = 'reverse' },
-		Warnings =				  { fg = darcula.yellow },
+    Whitespace =        { fg = darcula.muted },
+		-- ToolbarLine =			  { fg = darcula.fg, bg = darcula.bg_alt },
+		-- ToolbarButton =			{ fg = darcula.fg, bg = darcula.none, style = 'bold' },
+		-- InsertMode =			  { fg = darcula.green, bg = darcula.none, style = 'reverse' },
+		-- ReplacelMode =			{ fg = darcula.red, bg = darcula.none, style = 'reverse' },
+		-- VisualMode =			  { fg = darcula.purple, bg = darcula.none, style = 'reverse' },
+		-- CommandMode =			  { fg = darcula.fg, bg = darcula.none, style = 'reverse' },
+		-- Warnings =				  { fg = darcula.yellow },
     -- healthError =       { fg = darcula.error },
     healthSuccess =     { fg = darcula.none, bg = darcula.incSearch },
     -- healthWarning =     { fg = darcula.yellow },
     -- Dashboard
-    DashboardShortCut = { fg = darcula.blue },
-    DashboardHeader =   { fg = darcula.red },
-    DashboardCenter =   { fg = darcula.cyan },
-    DashboardFooter =   { fg = darcula.green, style = "italic" },
-
-    docComment = { darcula.docComment, bg = darcula.null, style = 'italic'},
+    -- DashboardShortCut = { fg = darcula.blue },
+    -- DashboardHeader =   { fg = darcula.red },
+    -- DashboardCenter =   { fg = darcula.cyan },
+    -- DashboardFooter =   { fg = darcula.green, style = "italic" },
+    --
+    docComment = { darcula.docComment, bg = darcula.none, style = 'italic'},
     NormalFg = { fg = darcula.fg },
     GitAddStripe = { fg = darcula.addStripe, bg = darcula.addStripe },
     GitChangeStripe = { fg = darcula.changeStripe, bg = darcula.changeStripe },
     GitDeleteStripe = { fg = darcula.deleteStripe, bg = darcula.gutter },
-    CodeError = { fg = darcula.null, bg = darcula.codeError },
-    CodeWarning = { fg = darcula.null, bg = darcula.codeWarning },
-    CodeInfo = { fg = darcula.null, bg = darcula.infoStripe },
+    CodeError = { fg = darcula.none, bg = darcula.codeError },
+    CodeWarning = { fg = darcula.none, bg = darcula.codeWarning },
+    CodeInfo = { fg = darcula.none, bg = darcula.infoStripe },
     CodeHint = { fg = darcula.hintFg, bg = darcula.hintBg },
     ErrorSign = { fg = darcula.errorStripe, bg = darcula.gutter },
     WarningSign = { fg = darcula.warnStripe, bg = darcula.gutter },
     InfoSign = { fg = darcula.infoStripe, bg = darcula.gutter },
     HintSign = { fg = darcula.hintStripe, bg = darcula.gutter },
-    IdentifierUnderCaret = { fg = darcula.null, bg = darcula.identifierUnderCaret },
-    IdentifierUnderCaretWrite = { fg = darcula.null, bg = darcula.identifierUnderCaretWrite },
+    IdentifierUnderCaret = { fg = darcula.none, bg = darcula.identifierUnderCaret },
+    IdentifierUnderCaretWrite = { fg = darcula.none, bg = darcula.identifierUnderCaretWrite },
     InstanceField = { fg = darcula.constant },
     UIDialog = { fg = darcula.fg, bg = darcula.statusLine },
     UIBorder = { fg = darcula.UIBorder, bg = darcula.statusLine },
-    UISelection = { fg = darcula.null, bg = darcula.UISelection },
+    UISelection = { fg = darcula.none, bg = darcula.UISelection },
 
 
 	}
@@ -216,7 +216,7 @@ theme.loadEditor = function ()
 
     -- Remove window split borders
     if vim.g.darcula_borders == true then
-      editor.VertSplit =				{ fg = darcula.border }
+      editor.VertSplit =				{ fg = darcula.muted }
     else
       editor.VertSplit =				{ fg = darcula.bg }
     end
@@ -374,7 +374,7 @@ theme.loadPlugins = function()
     local plugins = {
 
         -- LspTrouble
-        LspTroubleText =                        { fg = darcula.text },
+        LspTroubleText =                        { fg = darcula.fg },
         LspTroubleCount =                       { fg = darcula.purple, bg = darcula.active },
         LspTroubleNormal =                      { fg = darcula.fg, bg = darcula.sidebar },
 
@@ -414,13 +414,13 @@ theme.loadPlugins = function()
         GitSignsDeleteLn =                      { fg = darcula.red }, -- diff mode: Deleted line |diff.txt|
 
         -- Telescope
-        TelescopePromptBorder =                 { fg = darcula.cyan },
-        TelescopeResultsBorder =                { fg = darcula.purple },
-        TelescopePreviewBorder =                { fg = darcula.green },
-        TelescopeSelectionCaret =               { fg = darcula.purple },
-        TelescopeSelection =                    { fg = darcula.purple },
-        TelescopeMatching =                     { fg = darcula.cyan },
-        TelescopeNormal =                       { fg = darcula.fg, bg = darcula.float },
+        TelescopePromptBorder =                 { fg = darcula.fg },
+        TelescopeResultsBorder =                { fg = darcula.fg },
+        TelescopePreviewBorder =                { fg = darcula.fg },
+        TelescopeSelectionCaret =               { fg = darcula.selection },
+        TelescopeSelection =                    { fg = darcula.selection },
+        TelescopeMatching =                     { fg = darcula.matchBraceFg },
+        TelescopeNormal =                       { fg = darcula.fg, bg = darcula.bg },
 
         -- NvimTree
         NvimTreeNormal = { fg = darcula.fg, bg = darcula.bg },
