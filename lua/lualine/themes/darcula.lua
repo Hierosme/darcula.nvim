@@ -3,24 +3,24 @@ local colors = require('darcula.colors')
 local darcula = {}
 
 darcula.normal = {
-	a = {fg = colors.bg, bg = colors.ANSIDarkGray },
-	b = {fg = colors.bg, bg = colors.ANSIDarkGray },
+	a = {fg = colors.fg, bg = colors.bg , gui = 'bold'},
+	b = {fg = colors.fg, bg = colors.bg , gui = 'bold'},
 	c = {fg = colors.menuFg, bg = colors.menu},
 }
 
 darcula.insert = {
-	a = {fg = colors.bg, bg = colors.UIGreen },
-	b = {fg = colors.bg, bg = colors.UIGreen },
+	a = {fg = colors.bg, bg = colors.ANSIBrightCyan , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightGreen , gui = 'bold'},
 }
 
 darcula.visual = {
-	a = {fg = colors.bg, bg = colors.UIBlue },
-	b = {fg = colors.bg, bg = colors.UIBlue },
+	a = {fg = colors.bg, bg = colors.ANSIBrightBlue , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightBlue , gui = 'bold'},
 }
 
 darcula.replace = {
-	a = {fg = colors.bg, bg = colors.UIRed },
-	b = {fg = colors.bg, bg = colors.UIRed },
+	a = {fg = colors.bg, bg = colors.ANSIBrightRed , gui = 'bold'},
+	b = {fg = colors.bg, bg = colors.ANSIBrightRed , gui = 'bold'},
 }
 
 darcula.command = {
