@@ -477,10 +477,10 @@ theme.loadPlugins = function()
 
 
         -- WhichKey
-        WhichKey =                              { fg = darcula.accent , style = 'bold'},
-        WhichKeyGroup =                         { fg = darcula.text },
-        WhichKeyDesc =                          { fg = darcula.blue, style = 'italic' },
-        WhichKeySeperator =                     { fg = darcula.fg },
+        WhichKey =                              { fg = darcula.statusLineFg , bg = darcula.statusLine, style = 'bold'},
+        WhichKeyGroup =                         { fg = darcula.UIBlue },
+        WhichKeyDesc =                          { fg = darcula.statusLineFg, style = 'italic' },
+        WhichKeySeperator =                     { fg = darcula.statusLineFg },
         WhichKeyFloating =                      { bg = darcula.float },
         WhichKeyFloat =                         { bg = darcula.float },
 
