@@ -477,12 +477,13 @@ theme.loadPlugins = function()
 
 
         -- WhichKey
-        WhichKey =                              { fg = darcula.statusLineFg , bg = darcula.statusLine, style = 'bold'},
-        WhichKeyGroup =                         { fg = darcula.UIBlue },
-        WhichKeyDesc =                          { fg = darcula.statusLineFg, style = 'italic' },
-        WhichKeySeperator =                     { fg = darcula.statusLineFg },
-        WhichKeyFloating =                      { bg = darcula.float },
-        WhichKeyFloat =                         { bg = darcula.float },
+        WhichKey =                              { fg = darcula.constructer , bg = darcula.statusLine, style = 'bold'},
+        WhichKeyGroup =                         { fg = darcula.keyword },
+        WhichKeySeperator =                     { fg = darcula.diffAdd },
+        WhichKeyDesc =                          { fg = darcula.identifierUnderCaret, style = 'italic' },
+        WhichKeyFloat =                         { bg = darcula.menuFg },
+        WhichKeyBorder =                        { bg = darcula.menuFg },
+        WhichKeyKeyValue =                      { bg = darcula.comment },
 
         -- LspSaga
         DiagnosticError =                       { fg = darcula.error },
