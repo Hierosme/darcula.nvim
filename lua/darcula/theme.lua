@@ -145,7 +145,6 @@ theme.loadEditor = function ()
 		SpellLocal =			  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
 		SpellRare =				  { fg = darcula.typo, bg = darcula.none, style = 'undercurl' },
     Substitube =        { fg = darcula.none, bg = darcula.search },
-		SignColumn =			  { fg = darcula.none, bg = darcula.gutter },
 		StatusLine =			  { fg = darcula.statusLineFg, bg = darcula.statusLine },
 		StatusLineNC =  		{ fg = darcula.statusLineNC, bg = darcula.statusLine },
     StatusLineTerm =		{ fg = darcula.statusLineFg, bg = darcula.statusLine },
@@ -208,10 +207,10 @@ theme.loadEditor = function ()
     --Set transparent background
     if vim.g.darcula_disable_background == true then
       editor.Normal =				{ fg = darcula.fg, bg = darcula.none } -- normal text and background color
-      editor.SignColumn =			{ fg = darcula.fg, bg = darcula.none }
+      editor.SignColumn =			{ fg = darcula.none, bg = darcula.none }
     else
       editor.Normal =				{ fg = darcula.fg, bg = darcula.bg } -- normal text and background color
-      editor.SignColumn =			{ fg = darcula.fg, bg = darcula.bg }
+      editor.SignColumn =			{ fg = darcula.none, bg = darcula.gutter }
     end
 
     -- Remove window split borders
