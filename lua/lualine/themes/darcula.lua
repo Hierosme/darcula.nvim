@@ -3,8 +3,8 @@ local colors = require('darcula.colors')
 local darcula = {}
 
 darcula.normal = {
-	a = {fg = colors.menuFg, bg = colors.ANSIDarkGray, gui = 'bold'},
-	b = {fg = colors.menuFg, bg = colors.ANSIDarkGray, gui = 'bold'},
+	a = {fg = colors.statusLineFg, bg = colors.statusLine, gui = 'bold'},
+	b = {fg = colors.statusLineFg, bg = colors.statusLine, gui = 'bold'},
 	c = {fg = colors.menuFg, bg = colors.menu},
 }
 
