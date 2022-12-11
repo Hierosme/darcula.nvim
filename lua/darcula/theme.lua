@@ -248,16 +248,16 @@ theme.loadTreeSitter = function ()
     -- TreeSitter highlight groups
 
     local treesitter = {
-        TSAnnotation =              { fg = darcula.metaData },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-        TSAttribute =               { fg = darcula.metaData },    -- (unstable) TODO: docs
-        TSBoolean =                 { fg = darcula.keyword },    -- For booleans.
-        TSCharacter =               { fg = darcula.string },    -- For characters.
-        TSConstructor =             { fg = darcula.constructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        TSConstant =                { fg = darcula.constant},    -- For constants
-        TSConstBuiltin =            { fg = darcula.keyword },    -- For constant that are built in the language: `nil` in Lua.
-        TSConstMacro =              { fg = darcula.macroName },    -- For constants that are defined by macros: `NULL` in C.
-        TSError =                   { fg = darcula.codeError },    -- For syntax/parser errors.
-        TSException =               { fg = darcula.keyword },    -- For exception related keywords.
+        TSAnnotation =              { fg = darcula.TSAnnotation },    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+        TSAttribute =               { fg = darcula.TSAttribute },    -- (unstable) TODO: docs
+        TSBoolean =                 { fg = darcula.TSBoolean },    -- For booleans.
+        TSCharacter =               { fg = darcula.TSCharacter },    -- For characters.
+        TSConstructor =             { fg = darcula.TSConstructor }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+        TSConstant =                { fg = darcula.TSConstant},    -- For constants
+        TSConstBuiltin =            { fg = darcula.TSConstBuiltin },    -- For constant that are built in the language: `nil` in Lua.
+        TSConstMacro =              { fg = darcula.TSConstMacro },    -- For constants that are defined by macros: `NULL` in C.
+        TSError =                   { fg = darcula.TSError },    -- For syntax/parser errors.
+        TSException =               { fg = darcula.TSException },    -- For exception related keywords.
         TSField =                   { fg = darcula.constant }, -- For fields.
         TSFloat =                   { fg = darcula.number },    -- For floats.
         TSFuncMacro =               { fg = darcula.macroName },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
@@ -267,11 +267,11 @@ theme.loadTreeSitter = function ()
         TSNone =                    { fg = darcula.fg },    -- TODO: docs
         TSNumber =                  { fg = darcula.number },    -- For all numbers
         TSOperator =                { fg = darcula.fg }, -- For any operator: `+`, but also `->` and `*` in C.
-        TSParameter =               { fg = darcula.fg }, -- For parameters of a function.
-        TSParameterReference=       { fg = darcula.ANSIMagenta },    -- For references to parameters of a function.
-        TSProperty =                { fg = darcula.constant }, -- Same as `TSField`.
-        TSPunctDelimiter =          { fg = darcula.normal }, -- For delimiters ie: `.`
-        TSPunctBracket =            { fg = darcula.normal }, -- For brackets and parens.
+        TSParameter =               { fg = darcula.TSParameter },             -- For parameters of a function.
+        TSParameterReference=       { fg = darcula.TSParameterReference },    -- For references to parameters of a function.
+        TSProperty =                { fg = darcula.TSProperty },       -- Same as `TSField`.
+        TSPunctDelimiter =          { fg = darcula.normal },         -- For delimiters ie: `.`
+        TSPunctBracket =            { fg = darcula.normal },         -- For brackets and parens.
         TSPunctSpecial =            { fg = darcula.specialComment }, -- For special punctutation that does not fall in the catagories before.
         TSString =                  { fg = darcula.string },    -- For strings.
         TSStringRegex =             { fg = darcula.number }, -- For regexes.
