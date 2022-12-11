@@ -153,8 +153,8 @@ local darcula = {
   TSFunction =  "",               -- For fuction (calls and definitions).
   TSMethod =  "",                 -- For method calls and definitions.
   TSFuncBuiltin =  "",            -- For builtin functions: `table.insert` in Lua.
-  TSVariable =  "",               -- Any variable name that does not have another highlight.
-  TSVariableBuiltin =  "",        -- Variable names that are defined by the languages, like `this` or `self`.
+  TSVariable =  "#A9B7C6",               -- Any variable name that does not have another highlight.
+  TSVariableBuiltin =  "#B200B2",        -- Variable names that are defined by the languages, like `this` or `self`.
 
   -- terminal
   ANSIBlack = '#000000',

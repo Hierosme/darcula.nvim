@@ -265,7 +265,7 @@ theme.loadTreeSitter = function ()
         TSLabel =                   { fg = darcula.TSLabel }, -- For labels: `label:` in C and `:label:` in Lua.
         TSNamespace =               { fg = darcula.ANSIMagenta },    -- For identifiers referring to modules and namespaces.
         TSNone =                    { fg = darcula.fg },    -- TODO: docs
-        TSNumber =                  { fg = darcula.number },    -- For all numbers
+        TSNumber =                  { fg = darcula.TSNumber },    -- For all numbers
         TSOperator =                { fg = darcula.fg }, -- For any operator: `+`, but also `->` and `*` in C.
         TSParameter =               { fg = darcula.TSParameter },             -- For parameters of a function.
         TSParameterReference=       { fg = darcula.TSParameterReference },    -- For references to parameters of a function.
@@ -323,11 +323,11 @@ theme.loadTreeSitter = function ()
     end
 
     if vim.g.darcula_italic_variables == true then
-        treesitter.TSVariable =                { fg = darcula.fg, style = 'italic' } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = darcula.keyword, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = darcula.TSVariable, style = 'italic' } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = darcula.TSVariableBuiltin, style = 'italic' } -- Variable names that are defined by the languages, like `this` or `self`.
     else
-        treesitter.TSVariable =                { fg = darcula.fg } -- Any variable name that does not have another highlight.
-        treesitter.TSVariableBuiltin =         { fg = darcula.keyword } -- Variable names that are defined by the languages, like `this` or `self`.
+        treesitter.TSVariable =                { fg = darcula.TSVariable } -- Any variable name that does not have another highlight.
+        treesitter.TSVariableBuiltin =         { fg = darcula.TSVariableBuiltin } -- Variable names that are defined by the languages, like `this` or `self`.
     end
 
     return treesitter
