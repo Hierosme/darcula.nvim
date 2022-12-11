@@ -258,11 +258,11 @@ theme.loadTreeSitter = function ()
         TSConstMacro =              { fg = darcula.TSConstMacro },    -- For constants that are defined by macros: `NULL` in C.
         TSError =                   { fg = darcula.TSError },    -- For syntax/parser errors.
         TSException =               { fg = darcula.TSException },    -- For exception related keywords.
-        TSField =                   { fg = darcula.constant }, -- For fields.
-        TSFloat =                   { fg = darcula.number },    -- For floats.
-        TSFuncMacro =               { fg = darcula.macroName },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-        TSInclude =                 { fg = darcula.keyword },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-        TSLabel =                   { fg = darcula.fg }, -- For labels: `label:` in C and `:label:` in Lua.
+        TSField =                   { fg = darcula.TSField }, -- For fields.
+        TSFloat =                   { fg = darcula.TSNumber },    -- For floats.
+        TSFuncMacro =               { fg = darcula.TSFuncMacro },    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+        TSInclude =                 { fg = darcula.TSInclude },    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+        TSLabel =                   { fg = darcula.TSLabel }, -- For labels: `label:` in C and `:label:` in Lua.
         TSNamespace =               { fg = darcula.ANSIMagenta },    -- For identifiers referring to modules and namespaces.
         TSNone =                    { fg = darcula.fg },    -- TODO: docs
         TSNumber =                  { fg = darcula.number },    -- For all numbers
@@ -295,19 +295,19 @@ theme.loadTreeSitter = function ()
 
     -- Italic comments
     if vim.g.darcula_italic_comments == true then
-        treesitter.TSComment=                  { fg = darcula.comments , bg = darcula.none, style = 'italic' }    -- For comment blocks.
+        treesitter.TSComment=                  { fg = darcula.TSComment , bg = darcula.none, style = 'italic' }    -- For comment blocks.
     else
-        treesitter.TSComment=                  { fg = darcula.comments }    -- For comment blocks.
+        treesitter.TSComment=                  { fg = darcula.TSComment }    -- For comment blocks.
     end
 
     if vim.g.darcula_italic_keywords == true then
-        treesitter.TSConditional =             { fg = darcula.keyword, style = 'italic' }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = darcula.keyword, style = 'italic' } -- For keywords that don't fall in previous categories.
-        treesitter.TSRepeat =                  { fg = darcula.keyword, style = 'italic' }    -- For keywords related to loops.
+        treesitter.TSConditional =             { fg = darcula.TSConditional, style = 'italic' } -- For keywords related to conditionnals.
+        treesitter.TSKeyword =                 { fg = darcula.TSKeyword, style = 'italic' } -- For keywords that don't fall in previous categories.
+        treesitter.TSRepeat =                  { fg = darcula.keyword, style = 'italic' } -- For keywords related to loops.
         treesitter.TSKeywordFunction =         { fg = darcula.keyword, style = 'italic' } -- For keywords used to define a fuction.
     else
-        treesitter.TSConditional =             { fg = darcula.keyword }    -- For keywords related to conditionnals.
-        treesitter.TSKeyword =                 { fg = darcula.keyword } -- For keywords that don't fall in previous categories.
+        treesitter.TSConditional =             { fg = darcula.TSConditional }    -- For keywords related to conditionnals.
+        treesitter.TSKeyword =                 { fg = darcula.TSKeyword } -- For keywords that don't fall in previous categories.
         treesitter.TSRepeat =                  { fg = darcula.keyword }    -- For keywords related to loops.
         treesitter.TSKeywordFunction =         { fg = darcula.keyword } -- For keywords used to define a fuction.
     end

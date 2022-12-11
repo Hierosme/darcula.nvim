@@ -145,6 +145,17 @@ local darcula = {
   TSLiteral = "",                 -- Literal text.
   TSURI = "",                     -- Any URI like a link or email.
 
+  TSComment =  "#808080",         -- For comment blocks.
+  TSConditional = "#CC7832",      -- For keywords related to conditionnals.
+  TSKeyword =  "#CC7832",         -- For keywords that don't fall in previous categories.
+  TSRepeat =  "",                 -- For keywords related to loops.
+  TSKeywordFunction = "",         -- For keywords used to define a fuction.
+  TSFunction =  "",               -- For fuction (calls and definitions).
+  TSMethod =  "",                 -- For method calls and definitions.
+  TSFuncBuiltin =  "",            -- For builtin functions: `table.insert` in Lua.
+  TSVariable =  "",               -- Any variable name that does not have another highlight.
+  TSVariableBuiltin =  "",        -- Variable names that are defined by the languages, like `this` or `self`.
+
   -- terminal
   ANSIBlack = '#000000',
   ANSIRed = '#FF6B68',
