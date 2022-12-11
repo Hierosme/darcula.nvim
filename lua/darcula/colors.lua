@@ -1,29 +1,5 @@
 local darcula = {
 
-	-- white =         '#1F1F1F',
-	-- gray =          '#555555',
-	-- black =         '#000000',
-	-- red =           '#FF6B68',
-	-- green =         '#A8C023',
-	-- yellow =        '#FFFF00',
-	-- paleblue =      '#7EAEF1',
-	-- cyan =          '#299999',
-	-- blue =          '#5394EC',
-	-- purple =        '#AE8ABE',
-	-- orange =        '#f67f81',
-	-- pink =          '#FF99FF',
-	--
-	-- bg_alt =        '#1B1E2B',
-	-- text =          '#6A8759',
-	-- comments =      '#808080',
-	-- contrast =      '#1b1c2b',
-	-- active =        '#414863',
-	-- border =        '#616161',
-	-- line_numbers =  '#596399',
-	-- highlight =     '#a1abe0',
-	-- disabled =      '#515772',
-	-- accent =        '#a3ace1',
-	--
 	none =          'NONE',
   bg = '#2B2B2B',
   fg = '#A9B7C6',
@@ -150,9 +126,9 @@ local darcula = {
   TSKeyword =  "#CC7832",         -- For keywords that don't fall in previous categories.
   TSRepeat =  "#CC7832",          -- For keywords related to loops.
   TSKeywordFunction = "#CC7852",  -- For keywords used to define a fuction.
-  TSFunction =  "#CC7832",        -- For fuction (calls and definitions).
-  TSMethod =  "",                 -- For method calls and definitions.
-  TSFuncBuiltin =  "",            -- For builtin functions: `table.insert` in Lua.
+  TSFunction =  "#BBB529",        -- For fuction (calls and definitions).
+  TSMethod =  "#A9B7C6",                 -- For method calls and definitions.
+  TSFuncBuiltin =  "#B200B2",            -- For builtin functions: `table.insert` in Lua.
   TSVariable =  "#A9B7C6",               -- Any variable name that does not have another highlight.
   TSVariableBuiltin =  "#B200B2",        -- Variable names that are defined by the languages, like `this` or `self`.
 

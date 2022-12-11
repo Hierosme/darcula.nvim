@@ -15,7 +15,7 @@ theme.loadSyntax = function ()
 		Number =					{ fg = darcula.TSNumber },    -- a number constant: 5
 		Boolean =					{ fg = darcula.TSBoolean },   -- a boolean constant: TRUE, false
 		Float =						{ fg = darcula.TSFloat },     -- a floating point constant: 2.3e10
-		Statement =				{ fg = darcula.keyword },     -- any statement
+		Statement =				{ fg = darcula.TSKeyword },     -- any statement
 		Label =						{ fg = darcula.TSLabel },      -- case, default, etc.
 		Operator =				{ fg = darcula.TSOperator },      -- sizeof", "+", "*", etc.
 		Exception =				{ fg = darcula.TSException }, -- try, catch, throw
@@ -28,7 +28,7 @@ theme.loadSyntax = function ()
 		Special =					{ fg = darcula.metaData },    -- any special symbol
 		SpecialChar =			{ fg = darcula.metaData },    -- special character in a constant
 		Tag =						  { fg = darcula.TSTag },     -- you can use CTRL-] on this
-		Delimiter =				{ fg = darcula.delimiter },   -- character that needs attention like , or .
+		Delimiter =				{ fg = darcula.TSPunctDelimiter },   -- character that needs attention like , or .
 		SpecialComment =	{ fg = darcula.specialComment, bg = darcula.none, style = 'italic' }, -- special things inside a comment
 		Debug =						{ fg = darcula.debug, bg = darcula.none, style = 'italic' },            -- debugging statements
 		Underlined =			{ fg = darcula.fg, bg = darcula.none, style = 'underline' },            -- text that stands out, HTML links
