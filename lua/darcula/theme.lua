@@ -6,37 +6,37 @@ theme.loadSyntax = function ()
     -- Syntax highlight groups
 
 	local syntax = {
-		Type =						{ fg = darcula.purple }, -- int, long, char, etc.
-		StorageClass =				{ fg = darcula.cyan }, -- static, register, volatile, etc.
-		Structure =					{ fg = darcula.puple }, -- struct, union, enum, etc.
-		Constant =					{ fg = darcula.constant }, -- any constant
-		String =					{ fg = darcula.string, bg = darcula.none, style= 'italic' }, -- Any string
-		Character =					{ fg = darcula.string }, -- any character constant: 'c = { fg='\n'
-		Number =					{ fg = darcula.ANSICyan }, -- a number constant: 5
-		Boolean =					{ fg = darcula.ANSICyan }, -- a boolean constant: TRUE, false
-		Float =						{ fg = darcula.ANSICyan }, -- a floating point constant: 2.3e10
-		Statement =					{ fg = darcula.keyword }, -- any statement
-		Label =						{ fg = darcula.purple }, -- case, default, etc.
-		Operator =					{ fg = darcula.string }, -- sizeof", "+", "*", etc.
-		Exception =					{ fg = darcula.constructer }, -- try, catch, throw
-		PreProc =					{ fg = darcula.metaData }, -- generic Preprocessor
-		Include =					{ fg = darcula.ANSIYellow}, -- preprocessor #include
-		-- Define =					{ fg = darcula.pink }, -- preprocessor #define
-		Macro =						{ fg = darcula.cyan }, -- same as Define
-		Typedef =					{ fg = darcula.typeDef }, -- A typedef
-		PreCondit =					{ fg = darcula.ANSIYellow }, -- preprocessor #if, #else, #endif, etc.
-		Special =					{ fg = darcula.metaData }, -- any special symbol
-		SpecialChar =				{ fg = darcula.metaData }, -- special character in a constant
-		Tag =						    { fg = darcula.keyword }, -- you can use CTRL-] on this
-		Delimiter =					{ fg = darcula.delimiter }, -- character that needs attention like , or .
-		SpecialComment =		{ fg = darcula.specialComment, bg = darcula.none, style = 'italic' }, -- special things inside a comment
-		Debug =						{ fg = darcula.debug, bg = darcula.none, style = 'italic' }, -- debugging statements
-		Underlined =			{ fg = darcula.fg, bg = darcula.none, style = 'underline' }, -- text that stands out, HTML links
+		Type =						{ fg = darcula.TSType },      -- int, long, char, etc.
+		StorageClass =		{ fg = darcula.cyan },        -- static, register, volatile, etc.
+		Structure =				{ fg = darcula.puple },       -- struct, union, enum, etc.
+		Constant =				{ fg = darcula.TSConstant },  -- any constant
+		String =					{ fg = darcula.TSString, bg = darcula.none, style= 'italic' }, -- Any string
+		Character =				{ fg = darcula.TSCharacter }, -- any character constant: 'c = { fg='\n'
+		Number =					{ fg = darcula.TSNumber },    -- a number constant: 5
+		Boolean =					{ fg = darcula.TSBoolean },   -- a boolean constant: TRUE, false
+		Float =						{ fg = darcula.TSFloat },     -- a floating point constant: 2.3e10
+		Statement =				{ fg = darcula.keyword },     -- any statement
+		Label =						{ fg = darcula.TSLabel },      -- case, default, etc.
+		Operator =				{ fg = darcula.TSOperator },      -- sizeof", "+", "*", etc.
+		Exception =				{ fg = darcula.TSException }, -- try, catch, throw
+		PreProc =					{ fg = darcula.metaData },    -- generic Preprocessor
+		Include =					{ fg = darcula.TSInclude},   -- preprocessor #include
+		-- Define =					{ fg = darcula.pink },      -- preprocessor #define
+		Macro =						{ fg = darcula.TSFuncMacro },        -- same as Define
+		Typedef =					{ fg = darcula.typeDef },     -- A typedef
+		PreCondit =				{ fg = darcula.ANSIYellow },  -- preprocessor #if, #else, #endif, etc.
+		Special =					{ fg = darcula.metaData },    -- any special symbol
+		SpecialChar =			{ fg = darcula.metaData },    -- special character in a constant
+		Tag =						  { fg = darcula.TSTag },     -- you can use CTRL-] on this
+		Delimiter =				{ fg = darcula.delimiter },   -- character that needs attention like , or .
+		SpecialComment =	{ fg = darcula.specialComment, bg = darcula.none, style = 'italic' }, -- special things inside a comment
+		Debug =						{ fg = darcula.debug, bg = darcula.none, style = 'italic' },            -- debugging statements
+		Underlined =			{ fg = darcula.fg, bg = darcula.none, style = 'underline' },            -- text that stands out, HTML links
 		Ignore =					{ fg = darcula.disabled }, -- left blank, hidden
-		Error =						{ fg = darcula.error, bg = darcula.none, style = 'bold,underline' }, -- any erroneous construct
-		Todo =						{ fg = darcula.yellow, bg = darcula.none, style = 'bold,italic' }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Error =						{ fg = darcula.error, bg = darcula.none, style = 'bold,underline' },    -- any erroneous construct
+		Todo =						{ fg = darcula.yellow, bg = darcula.none, style = 'bold,italic' },      -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
-    htmlLink = { fg = darcula.link, style = "underline" },
+    htmlLink = { fg = darcula.TSURI, style = "underline" },
     htmlH1 = { fg = darcula.ANSIBrightCyan, style = "bold" },
     htmlH2 = { fg = darcula.ANSIBrightRed, style = "bold" },
     htmlH3 = { fg = darcula.ANSIBrightGreen, style = "bold" },
@@ -54,33 +54,33 @@ theme.loadSyntax = function ()
 
 	-- Italic comments
 	if vim.g.darcula_italic_comments == true then
-		syntax.Comment =		{fg = darcula.comments, bg = darcula.none, style = 'italic'} -- italic comments
+		syntax.Comment =		{fg = darcula.TSComment, bg = darcula.none, style = 'italic'} -- italic comments
 	else
-		syntax.Comment =		{fg = darcula.comments} -- normal comments
+		syntax.Comment =		{fg = darcula.TSComment} -- normal comments
 	end
 
 	-- Italic Keywords
 	if vim.g.darcula_italic_keywords == true then
-		syntax.Conditional =	{fg = darcula.purple, bg = darcula.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = darcula.keyword, bg = darcula.none, style = 'italic'} -- italic for, do, while, etc.
-		syntax.Repeat =				{fg = darcula.purple, bg = darcula.none, style = 'italic'} -- italic any other keyword
+		syntax.Conditional =	{fg = darcula.TSConditional, bg = darcula.none, style = 'italic'} -- italic if, then, else, endif, switch, etc.
+		syntax.Keyword =			{fg = darcula.TSKeyword, bg = darcula.none, style = 'italic'}     -- italic for, do, while, etc.
+		syntax.Repeat =				{fg = darcula.TSRepeat, bg = darcula.none, style = 'italic'}      -- italic any other keyword
 	else
-		syntax.Conditional =	{fg = darcula.purple} -- normal if, then, else, endif, switch, etc.
-		syntax.Keyword =			{fg = darcula.keyword} -- normal for, do, while, etc.
-		syntax.Repeat =				{fg = darcula.purple} -- normal any other keyword
+		syntax.Conditional =	{fg = darcula.TSConditional} -- normal if, then, else, endif, switch, etc.
+		syntax.Keyword =			{fg = darcula.TSKeyword}     -- normal for, do, while, etc.
+		syntax.Repeat =				{fg = darcula.TSRepeat}      -- normal any other keyword
 	end
 
 	-- Italic Function names
 	if vim.g.darcula_italic_functions == true then
-		syntax.Function =		{fg = darcula.constructor, style = 'italic'} -- italic funtion names
+		syntax.Function =		{fg = darcula.TSFunction, style = 'italic'} -- italic funtion names
 	else
-		syntax.Function =		{fg = darcula.constructer} -- normal function names
+		syntax.Function =		{fg = darcula.TSFunction} -- normal function names
 	end
 
 	if vim.g.darcula_italic_variables == true then
-		Identifier =				{fg = darcula.fg, bg = darcula.none, style = 'italic'}; -- any variable name
+		syntax.Identifier =				{fg = darcula.TSVariable, bg = darcula.none, style = 'italic'} -- any variable name
     else
-		Identifier =				{fg = darcula.fg}; -- any variable name
+		syntax.Identifier =				{fg = darcula.TSVariable} -- any variable name
     end
 
     return syntax
@@ -113,7 +113,6 @@ theme.loadEditor = function ()
 		Folded =				    { fg = darcula.foldedFg, bg = darcula.foldedBg, style = 'italic' },
 		FoldColumn =			  { fg = darcula.foldedFg, bg = darcula.foldedBg },
 		IncSearch =				  { fg = darcula.none, bg = darcula.incSearch },
-		Identifier =				{ fg = darcula.fg },
 		LineNr =				    { fg = darcula.lineNumber, bg = darcula.gutter },
 		LineNrAbove =				{ fg = darcula.lineNumber, bg = darcula.gutter },
 		LineNrBelow =				{ fg = darcula.lineNumber, bg = darcula.gutter },
